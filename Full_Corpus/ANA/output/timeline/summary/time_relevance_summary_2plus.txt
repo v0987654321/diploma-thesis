@@ -1,0 +1,28 @@
+TIME-RELEVANCE SUMMARY
+Generated: 2026-04-28T18:41:15
+
+Time window:
+- 2021-07 to 2025-12
+
+Relevance scope:
+- 2plus
+
+Coverage after filtering:
+- rows retained: 1991
+- earliest included month: 2021-07
+- latest included month: 2025-12
+
+Relevance totals:
+- Relevance 2: 1092
+- Relevance 3: 315
+- Relevance 4: 584
+
+Actor mention totals:
+- Wagner-only: 1870
+- Africa Corps / both: 118
+
+Outputs:
+- tables/monthly_relevance_counts_2plus.csv
+- tables/monthly_wagner_vs_ac_counts_2plus.csv
+- figures/monthly_relevance_distribution_2plus.png
+- figures/monthly_wagner_vs_ac_lines_2plus.png

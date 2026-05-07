@@ -1,0 +1,25 @@
+DATA DIAGNOSTIC REPORT
+Generated: 2026-04-28T18:41:24
+
+Input source:
+- review_master
+
+Corpus size:
+- rows inspected: 2474
+
+Date and period:
+- Missing dates: 40
+- Unparseable dates: 0
+- Unknown period: 40
+- Outside main period: 99
+
+Coding diagnostics:
+- Rows with invalid coded values: 0
+- Rows with missing coded values: 477
+
+Generated files:
+- diagnostic_summary.csv
+- diagnostic_invalid_values.csv
+- diagnostic_missing_values.csv
+- diagnostic_period_issues.csv
+- diagnostic_outlet_counts.csv

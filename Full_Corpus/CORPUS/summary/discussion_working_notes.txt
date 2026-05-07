@@ -1,0 +1,32 @@
+DISCUSSION WORKING NOTES
+Generated: 2026-04-25T19:52:03
+
+1. Role of supplementary layers
+- corpus4 adds lexical pattern interpretation
+- corpus5 adds normalization-sensitive lexical aggregation
+- corpus6 adds exploratory BERTopic clustering on selected high-salience subsets
+- corpus7 adds NER and entity co-occurrence environments
+
+2. Wagner vs Africa Corps
+- Compare structured coding, lexical signals, entity environments, and topic hints.
+- Note clearly that AC subset has direct topic/lexical/entity support, whereas Wagner-only topic/lexical support remains more indirect in the current exploratory setup.
+
+3. Source-attributed vs non-attributed
+- Use StepB + lexical/entity profiles to discuss whether outlet differences may be partly shaped by republication patterns.
+
+4. Methodological caution
+- Treat corpus6 topic modelling as exploratory, supplementary, and discussion-level.
+- Treat corpus7 NER as enrichment rather than authoritative actor coding.
+
+5. Bridge to external literature
+- The new Mali/France article can be discussed here as a parallel corpus-assisted discourse study.
+- Main comparison point: their topic-modelling/sentiment architecture vs this project’s structured codebook + adjudication + CDA design.
+
+6. Suggested anchor files
+- source_attributed_vs_nonattributed_integrated_comparison.csv
+- review_vs_highconfidence_integrated_comparison.csv
+- key_findings_discussion.csv
+- corpus4_summary.txt
+- corpus5_summary.txt
+- corpus6_summary.txt
+- corpus7_summary.txt

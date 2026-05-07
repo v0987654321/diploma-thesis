@@ -1,0 +1,14 @@
+CORPUS7 NER NOTES
+Generated: 2026-04-25T16:54:32
+
+Methodological note:
+- This script provides exploratory NER enrichment.
+- Entity normalization is partly model-driven and partly rule-based.
+- Results should be used as analytical support, not as definitive actor-coding replacements.
+
+Analytical uses:
+- identify recurrent actor environments around Wagner / Africa Corps
+- compare entity salience by outlet
+- inspect sentence-level co-occurrence with target actors
+- support Q3/Q5 interpretation
+- enrich later synthesis tables

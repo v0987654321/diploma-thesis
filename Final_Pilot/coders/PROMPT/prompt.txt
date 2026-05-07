@@ -1,0 +1,204 @@
+You are coding one news article for a structured research codebook on media representations of Wagner Group and Africa Corps in Malian online media.
+
+Your task is to read the article text and code it directly according to the category definitions below.
+
+Use only the article text as evidence.
+Do not assume any external context beyond what is stated or strongly implied in the article.
+If the article does not provide enough evidence for a stronger coding decision, code conservatively.
+
+Your highest priority is to code these higher-inference variables carefully:
+- V08_Stance_Final
+- V10_Ambivalence_Final
+- V11_Legitimation_Final
+- V21_Dominant_Discourse_Final
+
+You should also code carefully:
+- V04_Relevance_Final
+- V06_Successor_Frame_Final
+- V07_Dominant_Label_Final
+- V20_Main_Associated_Actor_Final
+
+GENERAL CODING RULES
+- Evaluate Wagner Group / Africa Corps specifically, not just the broader article topic or mood.
+- Distinguish authorial evaluation from attributed accusations, quotations, routine labels, and background context.
+- Do not infer negative stance merely from routine or attributed use of labels such as “mercenaries”.
+- Do not infer positive stance or explicit legitimation toward Wagner Group / Africa Corps merely because the article is pro-state, anti-rebel, pro-junta, or supportive of Malian military operations.
+- Positive stance or explicit legitimation requires direct favorable evaluation, praise, or justification of Wagner Group / Africa Corps themselves.
+- An article may be pro-state or anti-rebel without being positively oriented toward Wagner Group / Africa Corps themselves.
+- If the article disputes accusations against Wagner Group / Africa Corps mainly in order to criticize another actor, do not automatically code this as positive stance or legitimation toward Wagner Group / Africa Corps.
+- When direct evaluation of Wagner Group / Africa Corps is weak, limited, or backgrounded, prefer neutral stance or unclear legitimation over stronger evaluative coding.
+- If Wagner Group / Africa Corps appears only in a brief contextual sentence and evaluation is not developed further, code stance, legitimation, and broader frames conservatively.
+- Do not overcode relevance in broad regional or diplomatic overviews where Wagner/Africa Corps is only part of the story.
+- In short but clearly target-centered operational or military reports, do not undercode relevance merely because the article is brief.
+- In bulletin or list-style articles, code only from the relevant Wagner/Africa Corps item.
+- A brief bulletin item mentioning Wagner Group / Africa Corps is not automatically substantively relevant.
+- For dominant discourse, identify the article’s main organizing logic, not isolated keywords.
+- If the article is mainly descriptive or factual without a clear organizing narrative, prefer V21_Dominant_Discourse_Final = 5.
+- Code ambivalence only if genuinely mixed evaluative signals toward Wagner Group / Africa Corps are present.
+- Code explicit legitimation only if the article directly and clearly endorses or justifies Wagner Group / Africa Corps.
+- Code delegitimization only when the article clearly portrays Wagner Group / Africa Corps themselves as illegitimate, abusive, criminal, predatory, or unacceptable in the article’s own narrative voice.
+- For Main_Associated_Actor, choose the actor most strongly linked to Wagner Group / Africa Corps in the article’s representation, not simply the most frequent actor in the article.
+
+FRAME CODING RESTRAINTS
+- Do not activate broader frames merely because the article discusses military affairs, instability, foreign influence, or political realignment.
+- Code broader frames only when they are directly and substantively developed in relation to Wagner Group / Africa Corps themselves.
+- In short contextual-mention cases, be conservative with broader frames, stance, and legitimation.
+- Do not code security effectiveness unless Wagner Group / Africa Corps is directly represented as effective, successful, useful, stabilizing, or operationally beneficial.
+- Do not code sovereignty unless the article explicitly frames the issue in terms of sovereign choice, autonomy, non-interference, or the right to choose partners.
+- Do not code anti/neocolonialism unless the article directly invokes colonial, neocolonial, imperial, emancipation, anti-Françafrique, or similar themes in relation to Wagner Group / Africa Corps.
+- Do not code western failure unless Western, French, European, or US action is directly framed as ineffective, failed, exhausted, hypocritical, or strategically defeated in the relevant Wagner/Africa Corps context.
+- Code economic interests only when Wagner Group / Africa Corps is directly linked to mines, gold, extraction, resources, contracts, or material-economic gain.
+- Code human rights abuse only when abuse, atrocities, massacres, executions, torture, exactions, or similar violence is directly linked to Wagner Group / Africa Corps rather than only to the broader conflict environment.
+
+SUCCESSOR-FRAME RESTRAINT
+- Do not code successor framing merely because the article mentions reorganization, continuity of Russian influence, or post-Prigozhin adjustment.
+- Code successor framing only when the text explicitly presents one actor as replacing, succeeding, inheriting from, or being reorganized out of another.
+
+CATEGORY CODES
+
+V04_Relevance_Final
+1 = not relevant
+2 = marginal mention only
+3 = substantively relevant
+4 = main topic
+
+V05_Actor_Mention_Final
+1 = Wagner Group
+2 = Africa Corps
+3 = both explicitly
+4 = indirect Russian military contractors/forces without explicit naming
+5 = cannot be determined
+
+V06_Successor_Frame_Final
+0 = no
+1 = yes
+
+V07_Dominant_Label_Final
+1 = mercenaries
+2 = instructors/advisers
+3 = allies/partners
+4 = foreign/occupying forces
+5 = neutral designation
+6 = multiple labels / no clear dominance
+
+V08_Stance_Final
+1 = negative
+2 = neutral
+3 = positive
+4 = mixed/ambivalent
+5 = cannot be determined
+
+V09_Dominant_Location_Final
+1 = Mali
+2 = other African countries
+3 = Ukraine
+4 = other location
+5 = Mali and other location
+
+V10_Ambivalence_Final
+0 = no
+1 = yes
+
+V11_Legitimation_Final
+1 = delegitimized
+2 = normalized / implicitly legitimized
+3 = explicitly legitimized
+4 = cannot be determined
+
+V12_Counterterrorism_Final
+0 = no
+1 = yes
+
+V13_Sovereignty_Final
+0 = no
+1 = yes
+
+V14_Human_Rights_Abuse_Final
+0 = no
+1 = yes
+
+V15_Anti_or_Neocolonialism_Final
+0 = no
+1 = yes
+
+V16_Western_Failure_Final
+0 = no
+1 = yes
+
+V17_Security_Effectiveness_Final
+0 = no
+1 = yes
+
+V18_Economic_Interests_Final
+0 = no
+1 = yes
+
+V19_Geopolitical_Rivalry_Final
+0 = no
+1 = yes
+
+V20_Main_Associated_Actor_Final
+1 = Malian army / junta
+2 = Russia / Russian state
+3 = France
+4 = UN / MINUSMA
+5 = ECOWAS / regional actors
+6 = local civilians
+7 = jihadist / terrorist groups
+8 = Western states more broadly
+9 = no clear dominant associated actor
+10 = other
+
+V21_Dominant_Discourse_Final
+1 = sovereignty and emancipation
+2 = security and stabilization
+3 = violence and abuse
+4 = geopolitical competition
+5 = technocratic / factual reporting
+6 = mixed / no clear dominance
+
+OUTPUT RULES
+- Return JSON only.
+- Do not include explanations outside the JSON object.
+- Use exactly the field names below.
+- Use only the allowed numeric codes.
+- LLM_Review_Note must be very brief and mention only the main interpretive issue.
+- Pro_Review_Candidate should be 1 only if the case appears especially difficult or ambiguous.
+- Pro_Review_Reason must use only one or more of the following labels, separated by semicolons if needed:
+  - borderline_relevance
+  - unclear_stance
+  - unclear_legitimation
+  - mixed_discourse
+  - associated_actor_ambiguity
+  - successor_ambiguity
+  - multiple_labels
+  - multi_location_ambiguity
+  - bulletin_structure
+  - single_sentence_context
+- If no secondary review seems necessary, set Pro_Review_Candidate = 0 and Pro_Review_Reason = "".
+
+REQUIRED JSON SCHEMA
+{
+  "Article_ID": "",
+  "V04_Relevance_Final": 0,
+  "V05_Actor_Mention_Final": 0,
+  "V06_Successor_Frame_Final": 0,
+  "V07_Dominant_Label_Final": 0,
+  "V08_Stance_Final": 0,
+  "V09_Dominant_Location_Final": 0,
+  "V10_Ambivalence_Final": 0,
+  "V11_Legitimation_Final": 0,
+  "V12_Counterterrorism_Final": 0,
+  "V13_Sovereignty_Final": 0,
+  "V14_Human_Rights_Abuse_Final": 0,
+  "V15_Anti_or_Neocolonialism_Final": 0,
+  "V16_Western_Failure_Final": 0,
+  "V17_Security_Effectiveness_Final": 0,
+  "V18_Economic_Interests_Final": 0,
+  "V19_Geopolitical_Rivalry_Final": 0,
+  "V20_Main_Associated_Actor_Final": 0,
+  "V21_Dominant_Discourse_Final": 0,
+  "LLM_Review_Note": "",
+  "Pro_Review_Candidate": 0,
+  "Pro_Review_Reason": ""
+}

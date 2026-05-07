@@ -1,0 +1,62 @@
+STEPB.A DISCUSSION NOTES: RUSSIAN / RUSSIA-ATTRIBUTED SOURCE ENVIRONMENT
+Generated: 2026-04-28T20:02:00
+
+Scope:
+- Relevance threshold used: Final_Relevance >= 2
+- Overall comparison set: 1976 articles
+- Russian-source subset: 360 articles
+- Share of Russian-source subset within comparison set: 18.2%
+
+Interpretive use:
+This output should be treated as a supplementary source-environment indicator. It does not by itself measure editorial alignment, propaganda, or authorial endorsement. It identifies articles where Russian, Russian state, Russian state-media, pro-Russian, or Russia-attributed source signals are present in the source/republication environment detected by StepB.A.
+
+Russian-source type distribution:
+- none: 1610 (81.5% of relevance-threshold subset)
+- russian_military_defense: 176 (8.9% of relevance-threshold subset)
+- mixed_russian_source: 67 (3.4% of relevance-threshold subset)
+- russian_mfa: 50 (2.5% of relevance-threshold subset)
+- russian_embassy: 22 (1.1% of relevance-threshold subset)
+- russian_state_official: 15 (0.8% of relevance-threshold subset)
+- russian_state_media: 15 (0.8% of relevance-threshold subset)
+- russian_news_agency: 10 (0.5% of relevance-threshold subset)
+- russia_attributed_claim: 9 (0.5% of relevance-threshold subset)
+- pro_russian_proxy: 2 (0.1% of relevance-threshold subset)
+
+Most over-represented frames in the Russian-source subset:
+- Economic interests: 25.3% in RU-source subset vs 17.4% overall (+7.9 pp)
+- Geopolitical rivalry: 41.1% in RU-source subset vs 33.7% overall (+7.4 pp)
+- Security effectiveness: 15.6% in RU-source subset vs 11.8% overall (+3.7 pp)
+
+Most under-represented frames in the Russian-source subset:
+- Western failure: 15.8% in RU-source subset vs 15.4% overall (+0.4 pp)
+- Human rights abuse: 24.2% in RU-source subset vs 23.3% overall (+0.9 pp)
+- Anti-/neocolonialism: 10.8% in RU-source subset vs 9.7% overall (+1.1 pp)
+
+Outlet-level Russian-source concentration, top outlets:
+- malijet.com: 10 / 40 (25.0%)
+- malitribune.com: 53 / 233 (22.7%)
+- bamada.net: 108 / 513 (21.1%)
+- mali24.info: 6 / 31 (19.4%)
+- info-matin.ml: 4 / 21 (19.0%)
+
+Caveats:
+- Detection is rule-based and should be read as conservative support, not final truth.
+- Some Russia-attributed claims may be quoted critically rather than endorsed.
+- Russian source presence is not equivalent to pro-Russian stance.
+- Very small Russian-source subsets require caution.
+- Results depend on StepB source/republication detection quality.
+- If StepB was run on all articles, the relevance threshold here controls the analytical comparison.
+- If StepB was already run only on a filtered subset, this output inherits that prior filtering.
+- Frame comparison uses Gemini conservative adjudicated coding when available, otherwise postConsolidated fallback.
+
+Heatmaps:
+- Frame prevalence heatmap: C:\Users\Petr\Downloads\Published\Full_Corpus\pilot\data\stepBA\figures\stepBA_frame_prevalence_heatmap_rel2plus.png
+- Frame difference heatmap: C:\Users\Petr\Downloads\Published\Full_Corpus\pilot\data\stepBA\figures\stepBA_frame_difference_heatmap_rel2plus.png
+- Outlet Russian-source heatmap: C:\Users\Petr\Downloads\Published\Full_Corpus\pilot\data\stepBA\figures\stepBA_outlet_russian_source_heatmap_rel2plus.png
+
+Key output tables:
+- stepBA_russian_sources_with_final_coding.csv
+- stepBA_frame_comparison_rel2plus.csv
+- stepBA_russian_source_by_outlet_rel2plus.csv
+- stepBA_russian_source_type_distribution_rel2plus.csv
+- stepBA_russian_source_examples_rel2plus.csv

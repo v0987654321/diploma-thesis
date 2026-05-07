@@ -1,0 +1,48 @@
+StepC summary for backend: GEMINI
+============================================================
+Total candidates selected: 24
+Relevance 4 selected: 20
+Relevance 3 selected: 4
+
+Eligibility summary:
+  - Eligible total: 776
+  - Eligible relevance 4: 531
+  - Eligible relevance 3: 245
+  - Justified relevance 3: 243
+
+Exclusion / caution indicators:
+  - Bulletin-style exclusions flagged: 12
+  - Too-short exclusions flagged: 221
+  - Weak target development exclusions flagged: 1343
+  - Near-duplicate penalized cases available: 785
+  - Likely republished penalized cases available: 1287
+
+Primary category distribution:
+  - dominant: 18
+  - strong: 5
+  - anomalous: 1
+
+Outlet distribution:
+  - info-matin.ml: 3
+  - bamada.net: 3
+  - maliweb.net: 3
+  - malijet.com: 3
+  - studiotamani.org: 3
+  - malitribune.com: 3
+  - malikonews.com: 3
+  - mali24.info: 1
+  - lejalon.com: 1
+  - journaldumali.com: 1
+
+Period distribution:
+  - wagner_period: 14
+  - africa_corps_period: 4
+  - unknown: 3
+  - transition_period: 3
+
+Category assembly additions:
+  - dominant: 6 articles initially added
+  - strong: 5 articles initially added
+  - anomalous: 5 articles initially added
+  - transitional: 4 articles initially added
+  - outlet_contrastive: 4 articles initially added

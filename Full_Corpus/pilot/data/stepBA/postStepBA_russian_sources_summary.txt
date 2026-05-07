@@ -1,0 +1,46 @@
+StepB.A Russian / Russia-attributed source analysis summary
+======================================================================
+Generated: 2026-04-28T20:01:59
+Input: C:\Users\Petr\Downloads\Published\Full_Corpus\pilot\data\postStepB.csv
+Output directory: C:\Users\Petr\Downloads\Published\Full_Corpus\pilot\data\stepBA
+Rows analysed: 2474
+
+Core counts:
+- Russian_Source_Present: 388
+- Russian_Source_Dominant: 108
+- Russian_State_Source_Present: 383
+- Russian_State_Media_Source_Present: 69
+- Russian_Official_Source_Present: 320
+- Russian_Embassy_Source_Present: 34
+- ProRussian_Source_Present: 8
+- Russia_Attributed_Claim_Present: 61
+- Review flagged: 356
+
+Russian_Source_Type distribution:
+- none: 2077
+- russian_military_defense: 185
+- mixed_russian_source: 72
+- russian_mfa: 53
+- russian_embassy: 24
+- russian_state_media: 23
+- russian_state_official: 16
+- russian_news_agency: 10
+- russia_attributed_claim: 9
+- pro_russian_proxy: 5
+
+Russian_Source_Confidence distribution:
+- none: 2086
+- high: 147
+- medium: 126
+- low: 115
+
+Main outputs:
+- C:\Users\Petr\Downloads\Published\Full_Corpus\pilot\data\stepBA\postStepBA_russian_sources.csv
+- C:\Users\Petr\Downloads\Published\Full_Corpus\pilot\data\stepBA\postStepBA_russian_sources_review.csv
+
+Discussion outputs:
+- C:\Users\Petr\Downloads\Published\Full_Corpus\pilot\data\stepBA\discussion
+- C:\Users\Petr\Downloads\Published\Full_Corpus\pilot\data\stepBA\figures
+
+Methodological note:
+This layer is a supplementary source-environment enrichment. Russian-source presence is not equivalent to editorial endorsement or pro-Russian stance.

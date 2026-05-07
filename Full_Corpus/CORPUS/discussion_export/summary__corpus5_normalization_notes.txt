@@ -1,0 +1,22 @@
+CORPUS5 NORMALIZATION NOTES
+Generated: 2026-04-25T16:40:09
+
+1. Surface mode
+- Uses cleaned surface tokens after stopword removal.
+- Useful as a baseline and for checking visible lexical forms.
+
+2. Lemma mode
+- Uses French lemmatization where spaCy is available.
+- Intended to reduce inflectional noise.
+
+3. Custom mode
+- Uses lemma mode plus custom normalization mapping.
+- Intended to merge domain-relevant near-equivalent forms.
+
+4. Analytic mode
+- Uses custom-normalized tokens plus broader analytical grouping.
+- Intended as a high-level interpretive lexical aid.
+
+Important caution:
+- Analytic normalization is not a replacement for close reading.
+- It is an exploratory aggregation layer for lexical review and visualization.

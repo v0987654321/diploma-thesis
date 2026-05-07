@@ -1,0 +1,33 @@
+CHAPTER 5.2 WORKING NOTES
+Generated: 2026-04-25T19:52:03
+
+1. Corpus composition
+- Retrieved corpus: 2474
+- Relevance 3+ core analytical subset: 902
+- Relevance 4 subset: 585
+
+2. Actor representation
+- Wagner-only cases: 1876
+- Africa Corps or both cases: 118
+- Successor framing should be read alongside the smaller AC subset and transition-sensitive outputs.
+
+3. Framing/discourse
+- Security/stabilization and violence/abuse appear more prominent than sovereignty/emancipation.
+- The discourse support layer remains conservative and should be interpreted accordingly.
+
+4. Outlet/media differences
+- Use outlet_difference_synthesis.csv together with StepB source/republication outputs.
+- Compare outlet coding patterns with lexical and entity outputs before making stronger claims.
+
+5. Source/republication
+- Source-attributed cases: 1141
+- These cases likely matter for interpreting outlet variation and should not be ignored.
+
+6. Suggested anchor files
+- corpus_wide_synthesis.csv
+- actor_representation_synthesis.csv
+- frame_discourse_synthesis.csv
+- outlet_difference_synthesis.csv
+- source_republication_synthesis.csv
+- wagner_vs_ac_integrated_comparison.csv
+- key_findings_ch52.csv

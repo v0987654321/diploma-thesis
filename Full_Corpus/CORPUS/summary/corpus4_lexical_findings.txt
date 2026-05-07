@@ -1,0 +1,21 @@
+CORPUS4 LEXICAL FINDINGS
+Generated: 2026-04-25T16:20:26
+
+1. General observations
+- Total KWIC matches across all keywords: 78878
+- Total unique articles with KWIC hits: 2458
+- Most prominent keyword: russia_terms
+- Most prominent keyword group: external_actor_terms
+
+2. Subset observations
+- The strongest subset-specific lexical concentration observed in the current outputs is: russia_terms in review_flagged (10518 matches)
+
+3. Repeated pattern observations
+- Number of repeated sentence patterns retained (count >= 2): 16072
+
+4. Suggested uses
+- Use top_keywords_relevance_4.csv to identify lexically salient high-relevance patterns.
+- Use top_keywords_africa_corps_cases.csv to compare Africa Corps lexicalization against Wagner-centered cases.
+- Use top_keywords_successor_cases.csv to inspect transition / succession vocabulary.
+- Use outlet_keyword_profile.csv and outlet_keyword_group_profile.csv to identify outlet-level lexical asymmetries.
+- Use repeated_sentence_patterns.csv to identify potentially formulaic or recurrent representational constructions.
