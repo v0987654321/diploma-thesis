@@ -3,7 +3,6 @@ README.txt
 
 Project:
 Media Discourses of the Wagner Group in Malian Online Press
-Diploma Thesis Replication Package
 
 Author:
 Bc. Petr Vrána
@@ -11,114 +10,108 @@ Bc. Petr Vrána
 Supervisor:
 Mgr. Martin Schmiedl, Ph.D.
 
+Institution:
+Mendel University in Brno
+Faculty of Regional Development and International Studies
+
 Repository:
 https://github.com/v0987654321/diploma-thesis
 
-Methodological status:
-This repository contains the computational workflow, scripts, prompts, intermediate outputs,
-diagnostic files, and supplementary exploratory analyses used for the diploma thesis
-"Media Discourses of the Wagner Group in Malian Online Press".
+Associated thesis:
+Vrána, P. (2026). Media Discourses of the Wagner Group in Malian Online Press [Master’s thesis, Mendel University in Brno]. https://theses.cz/id/ieu87x/
 
-The repository is intended as a transparency and replication package. It documents how the
-article corpus was cleaned, coded, validated, adjudicated, analysed, and prepared for both
-quantitative content analysis and qualitative critical discourse analysis.
+Repository status:
+This repository contains the computational workflow, codebook-related prompts, intermediate outputs, diagnostic files, and supplementary analyses prepared for the diploma thesis Media Discourses of the Wagner Group in Malian Online Press. It also contains an article-specific corrected workflow created after a downstream provenance audit.
 
+The repository is intended as a transparency, replication, and reuse package. It documents how the article corpus was cleaned, coded, validated, enriched with source/republication information, analysed, and prepared for quantitative content analysis and qualitative discourse interpretation.
 
-============================================================
-1. THESIS AND WORKFLOW OVERVIEW
-============================================================
+The repository includes both:
+1. the original thesis workflow and its frozen output layer; and
+2. a corrected article workflow using the Gemini conservative adjudicated layer as its primary coding layer.
 
-This project studies how Wagner Group and Africa Corps were represented in selected Malian
-online news outlets between July 2021 and December 2025.
+The original thesis folders are retained unchanged for historical transparency and reproducibility of the submitted thesis. The article-specific folders are separate and do not overwrite original outputs.
 
-The empirical workflow follows an explanatory sequential mixed-methods design:
+======================================================================
+1. RESEARCH OVERVIEW
+======================================================================
 
-1. Corpus construction and preprocessing
-   - Raw article data are cleaned, normalized, deduplicated, and transformed into structured
-     article-level records.
-   - Article metadata, outlet identifiers, dates, headlines, leads, and body texts are
-     standardized.
+The project examines how Wagner Group and Africa Corps were represented in selected Malian online news outlets between July 2021 and December 2025.
 
-2. Rule-based and semi-automated quantitative coding
-   - Python scripts identify target mentions, Mali-context signals, actor labels, locations,
-     associated actors, thematic frames, and evaluative support indicators.
-   - These steps create a transparent local pipeline draft.
+The broader thesis used an explanatory sequential mixed-methods design:
+1. corpus construction and preprocessing;
+2. rule-based and semi-automated quantitative coding;
+3. pilot validation and reliability assessment;
+4. model-assisted coding and adjudication;
+5. source/republication enrichment;
+6. corpus-level quantitative analysis;
+7. purposive qualitative sample selection;
+8. qualitative discourse interpretation;
+9. supplementary exploratory lexical, NER, and topic-modelling analysis.
 
-3. Pilot validation and reliability assessment
-   - A pilot set of articles is compared across human coders, benchmark LLM coders,
-     the local rule-based pipeline, and operational adjudication branches.
-   - Krippendorff's alpha, percent agreement, Cohen's kappa, and distance matrices are used
-     to assess variable stability and output-layer suitability.
+The article derived from the thesis focuses more narrowly on whether selected Malian online news can be characterized as straightforwardly or uniformly pro-Russian. Its central argument is that Russian-linked military actors may be normalized indirectly through security framing, sovereignty claims, anti-French positioning, source hierarchy, and institutional reclassification, while remaining associated with mercenarism, civilian harm, human-rights allegations, and international criticism.
 
-4. AI-assisted adjudication
-   - Relevance-filtered articles are submitted to standardized LLM prompts.
-   - Gemini and local Ollama branches are run separately.
-   - Outputs are strictly parsed, schema-validated, value-validated, and merged back with
-     the pipeline outputs.
-
-5. Conservative adjudication
-   - Direct LLM outputs are not treated as automatically authoritative.
-   - Conservative fallback rules preserve pipeline values in selected risk cases and flag
-     cases requiring manual verification.
-   - The Gemini conservative adjudicated table is selected as the principal full-corpus
-     analytical output because pilot evaluation showed the best balance between human-majority
-     alignment and pipeline consistency.
-
-6. Source and republication enrichment
-   - Rule-based source analysis identifies explicit external sources, Malian media references,
-     republication phrases, attribution phrases, and near-duplicate article clusters.
-   - This layer is used diagnostically to interpret circulation and outlet-level differences.
-
-7. Corpus-level quantitative analysis
-   - Corpus overview, frame prevalence, actor representation, source/republication structure,
-     outlet differences, and temporal patterns are exported as tables and figures.
-
-8. Qualitative sample selection
-   - A purposive candidate pool for critical discourse analysis is generated using coding,
-     salience, transition, anomaly, outlet contrast, and source/republication criteria.
-
-9. Supplementary exploratory analysis
-   - KWIC, lexical normalization, word clouds, NER, BERTopic topic modelling, and synthesis
-     tables are produced as supporting layers.
-   - These outputs are exploratory and should not be treated as primary evidence without
-     close interpretation.
-
-10. Final chapter-oriented analysis
-   - Final tables, figures, diagnostics, and CDA support files are produced for thesis
-     Chapters 5 and 6.
-
-
-============================================================
+======================================================================
 2. MAIN METHODOLOGICAL PRINCIPLES
-============================================================
+======================================================================
 
-The workflow is grounded in quantitative content analysis and computer-aided text analysis.
-It follows several principles:
+The workflow is grounded in quantitative content analysis and computer-assisted text analysis. It follows the following principles:
 
-- explicit variable definitions,
-- predefined codebook categories,
-- article-level unit of analysis,
-- transparent preprocessing,
-- rule-based baseline coding,
-- pilot validation,
-- variable-level reliability assessment,
-- strict parsing and validation of model outputs,
-- conservative adjudication rather than direct acceptance of raw LLM output,
-- separation between primary coding outputs and supplementary exploratory outputs.
+- explicit variable definitions;
+- predefined codebook categories;
+- article-level unit of analysis;
+- transparent preprocessing;
+- rule-based baseline coding;
+- pilot validation;
+- variable-level reliability assessment;
+- strict parsing and validation of model outputs;
+- conservative adjudication rather than direct acceptance of raw LLM output;
+- separation between primary coding outputs, diagnostics, and exploratory outputs;
+- researcher-led interpretation of quantitative and qualitative findings.
 
-The workflow does not treat automated coding or LLM output as an autonomous source of truth.
-The scripts operationalize a researcher-defined codebook and generate structured support for
-analysis. Final interpretation remains the responsibility of the researcher.
+The workflow does not treat automated coding or LLM output as an autonomous source of truth. Scripts operationalize a researcher-defined codebook and generate structured support for analysis. Final interpretation remains the responsibility of the researcher.
 
+======================================================================
+3. IMPORTANT DATA-LAYER NOTE
+======================================================================
 
-============================================================
-3. PYTHON ENVIRONMENT AND DEPENDENCIES
-============================================================
+The repository contains two analytically distinct downstream workflows.
+
+A. ORIGINAL THESIS WORKFLOW
+
+The original thesis workflow is preserved in:
+
+Full_Corpus/CORPUS/
+Full_Corpus/ANA/
+
+These folders reproduce the data layer used in the submitted diploma thesis. A later provenance audit found that the original downstream workflow used pipeline coding values from review_master.csv because the conservative Gemini adjudicated variables were copied into the CORPUS workspace but were not merged into review_master.csv.
+
+As a result, the original ANA output layer uses the original pipeline-coded variables for its Final_* outputs through fallback logic. The original thesis results, tables, and figures remain internally consistent with this frozen pipeline-based analytical layer.
+
+B. CORRECTED ARTICLE WORKFLOW
+
+The corrected article workflow is located in:
+
+Full_Corpus/CORPUS_article/
+Full_Corpus/ANA_article/
+
+This workflow was created to correct the downstream provenance issue. In this version:
+
+- the Gemini conservative adjudicated table is merged directly into review_master.csv;
+- original pipeline values are preserved as Pipeline_* variables;
+- article-level Final_* variables are created from Gemini conservative adjudication with pipeline fallback where adjudicated values are unavailable;
+- copied corpus and ANA scripts use the corrected final coding layer;
+- original thesis outputs remain untouched.
+
+The article-specific workflow should be used for future journal-article analysis based on the conservative Gemini adjudicated coding layer.
+
+======================================================================
+4. PYTHON ENVIRONMENT AND DEPENDENCIES
+======================================================================
 
 Recommended Python version:
-    Python 3.10+
+    Python 3.10 or newer
 
-Core external libraries:
+Core libraries:
     pandas
     numpy
     requests
@@ -134,7 +127,7 @@ Core external libraries:
     tqdm
     wordcloud
 
-Optional libraries:
+Optional or supplementary libraries:
     spacy
     fr_core_news_sm or fr_core_news_md
     bertopic
@@ -142,7 +135,7 @@ Optional libraries:
     umap-learn
     hdbscan
 
-Standard-library modules used throughout:
+Standard-library modules used:
     os
     re
     json
@@ -159,37 +152,38 @@ Standard-library modules used throughout:
     argparse
     csv
     zipfile
+    hashlib
+    subprocess
+    sys
 
 Suggested base installation:
-
     pip install pandas numpy requests openpyxl dateparser rapidfuzz matplotlib seaborn scipy statsmodels scikit-learn krippendorff tqdm wordcloud
 
 Optional installation for NER and topic modelling:
-
     pip install spacy bertopic sentence-transformers umap-learn hdbscan
     python -m spacy download fr_core_news_sm
 
 For local LLM inference:
     Ollama must be installed and running.
-    The local scripts expect:
+    The local workflow expects:
         qwen2.5:14b-instruct
 
 For Gemini API inference:
     A Google Gemini API key is required in:
         APIkey.txt
 
+======================================================================
+5. FOLDER STRUCTURE
+======================================================================
 
-============================================================
-4. FOLDER STRUCTURE
-============================================================
-
-The repository contains two main workspaces:
+The repository contains two major workspaces:
 
 1. Final_Pilot/
    Pilot workflow and reliability validation.
 
 2. Full_Corpus/
-   Full corpus workflow and final thesis analysis.
+   Full-corpus processing, source/republication enrichment, corpus workspaces,
+   chapter-oriented analysis, and corrected article workflow.
 
 Main folders:
 
@@ -206,7 +200,6 @@ Final_Pilot/
             step13.py
         data/
         prompts/
-
     RELIABILITY/
         pilot1.py
         pilot2.py
@@ -222,6 +215,7 @@ Full_Corpus/
         stepBA.py
         stepC.py
         stepD.py
+        stepE.py, if present
         GEMINI/
             step12.py
             step13.py
@@ -232,6 +226,7 @@ Full_Corpus/
         prompts/
 
     CORPUS/
+        Original thesis corpus workspace.
         corpus1.py ... corpus8.py
         synthesis.py
         data/
@@ -248,14 +243,43 @@ Full_Corpus/
         synthesis/
 
     ANA/
+        Original thesis chapter-oriented analysis workspace.
         ANALYSIS.py
+        output/
 
+    CORPUS_article/
+        Corrected article-specific corpus workspace.
+        Created as a copy of CORPUS/ and then patched.
+        Uses Gemini conservative adjudication with pipeline fallback.
+        Contains its own:
+            data/
+            tables/
+            figures/
+            summary/
+            subsets/
+            evidence/
+            concordance/
+            lexical/
+            lexical_norm/
+            topics/
+            ner/
+            synthesis/
+            ARTICLE_WORKFLOW_README.txt
+            ARTICLE_LAYER_PROVENANCE.txt
 
-============================================================
-5. IMPORTANT PATH NOTE
-============================================================
+    ANA_article/
+        Corrected article-specific chapter-oriented analysis workspace.
+        Created as a copy of ANA/ and patched to read:
+            CORPUS_article/data/review_master.csv
+        Contains:
+            ANALYSIS.py
+            output/
 
-Most scripts use relative paths. Scripts should normally be run from their own workspace.
+======================================================================
+6. IMPORTANT PATH NOTE
+======================================================================
+
+Most original scripts use relative paths and should normally be run from their own workspace.
 
 Examples:
 
@@ -268,27 +292,34 @@ Gemini branch:
     python step12.py
     python step13.py
 
-Corpus outputs:
+Original thesis corpus outputs:
     cd Full_Corpus/CORPUS
     python corpus1.py
 
-Final chapter analysis:
+Original thesis chapter analysis:
     cd Full_Corpus/ANA
     python ANALYSIS.py --all
 
-If a file is missing, first check:
-    1. whether the previous step has been run,
-    2. whether you are in the correct directory,
-    3. whether the expected input file exists in the local data/ folder.
+Corrected article corpus outputs:
+    cd Full_Corpus/CORPUS_article
+    python corpus1.py
 
+Corrected article chapter analysis:
+    cd Full_Corpus/ANA_article
+    python ANALYSIS.py --all
 
-============================================================
-6. FULL CORPUS PIPELINE SCRIPTS
-============================================================
+If a file is missing, check:
+    1. whether the preceding step has been run;
+    2. whether the script is being run from the correct directory;
+    3. whether required inputs exist in the relevant data/ folder;
+    4. whether the workflow used is the original thesis layer or the corrected article layer.
+
+======================================================================
+7. FULL CORPUS PIPELINE SCRIPTS
+======================================================================
 
 Location:
     Full_Corpus/pilot/
-
 
 ------------------------------------------------------------
 step1.py
@@ -303,16 +334,16 @@ Input:
 Output:
     data/postStep1.csv
 
-Methodology:
-    - Normalizes article IDs to six-digit strings.
-    - Derives outlet codes and outlet names.
-    - Parses dates and records date precision.
-    - Cleans HTML residues and generic boilerplate.
-    - Deduplicates lead text from body text where the body repeats the lead.
-    - Applies outlet-specific body cleaning rules.
-    - Builds full cleaned article text.
+Main procedures:
+    - normalizes article IDs to six-digit strings;
+    - derives outlet codes and outlet names;
+    - parses dates and records date precision;
+    - cleans HTML residues and generic boilerplate;
+    - removes duplicated lead text where the body repeats the lead;
+    - applies outlet-specific body cleaning;
+    - builds full cleaned article text.
 
-Main variables produced:
+Main variables:
     article_id
     outlet_code
     article_seq
@@ -327,17 +358,6 @@ Main variables produced:
     body_postclean
     full_text_postclean
 
-Libraries:
-    pandas:
-        reading Excel, dataframe operations, export to CSV.
-    re:
-        regular expressions for cleaning, IDs, sentence splitting, and boilerplate removal.
-    unicodedata:
-        Unicode normalization.
-    dateparser:
-        parsing French and English date strings.
-
-
 ------------------------------------------------------------
 step2.py
 ------------------------------------------------------------
@@ -351,55 +371,25 @@ Input:
 Output:
     data/postStep2.csv
 
-Methodology:
-    - Detects target actors and labels:
-        Wagner,
-        Groupe Wagner,
-        Wagner Group,
-        Africa Corps,
-        Corps africain,
-        Russian mercenaries,
-        Russian instructors.
-    - Detects Mali-context markers:
-        Mali,
-        Bamako,
-        FAMa,
-        Malian army,
-        Assimi Goita,
-        Kidal,
-        Gao,
-        Mopti,
-        MINUSMA, etc.
-    - Scores target centrality by segment:
-        headline,
-        lead,
-        body.
-    - Computes sentence-level target metrics:
-        target sentence count,
-        target sentence share,
-        target cluster run,
-        whether target appears in first third.
-    - Detects bulletin-style articles.
-    - Assigns relevance code:
-        1 = not relevant,
-        2 = marginal mention only,
-        3 = substantively relevant,
-        4 = main topic.
-    - Flags possible manual review cases.
-
-Libraries:
-    pandas:
-        dataframe operations and CSV export.
-    re:
-        regex-based target and context detection.
-
+Main procedures:
+    - detects Wagner, Africa Corps, Russian mercenary, and Russian instructor terminology;
+    - detects Mali-context markers;
+    - scores target centrality in headlines, leads, and bodies;
+    - computes target sentence count, target sentence share, target clustering, and first-third presence;
+    - identifies bulletin-style articles;
+    - assigns relevance codes:
+        1 = not relevant
+        2 = marginal mention only
+        3 = substantively relevant
+        4 = main topic;
+    - flags possible manual-review cases.
 
 ------------------------------------------------------------
 step3.py
 ------------------------------------------------------------
 
 Purpose:
-    Codes actor mention, successor framing, and dominant label.
+    Codes actor mention, successor framing, and dominant labels.
 
 Inputs:
     data/postStep2.csv
@@ -408,40 +398,30 @@ Inputs:
 Output:
     data/postStep3.csv
 
-Methodology:
-    - Keeps only relevance 2, 3, and 4 articles.
-    - Merges cleaned lead and body text from step1.
-    - Codes Actor_Mention:
-        1 = Wagner explicitly mentioned,
-        2 = Africa Corps explicitly mentioned,
-        3 = both explicitly mentioned,
-        4 = indirect Russian military-contractor terminology,
-        5 = cannot determine.
-    - Codes Successor_Frame:
-        whether Africa Corps is explicitly linked to Wagner as successor, replacement,
-        continuation, or post-Wagner structure.
-    - Codes Dominant_Label:
-        mercenaries,
-        instructors/advisers,
-        allies/partners,
-        foreign/occupying forces,
-        neutral designation,
-        multiple/no clear dominance.
-    - Uses weighted local target-context scoring.
-
-Libraries:
-    pandas:
-        input/output and merging.
-    re:
-        pattern matching, sentence splitting, local-context extraction.
-
+Main procedures:
+    - retains relevance 2, 3, and 4 articles;
+    - codes Actor_Mention:
+        1 = Wagner explicitly mentioned
+        2 = Africa Corps explicitly mentioned
+        3 = both explicitly mentioned
+        4 = indirect Russian contractor terminology
+        5 = cannot determine;
+    - codes Successor_Frame;
+    - codes Dominant_Label:
+        mercenaries
+        instructors/advisers
+        allies/partners
+        foreign/occupying forces
+        neutral designation
+        multiple/no clear dominance;
+    - uses weighted local target-context scoring.
 
 ------------------------------------------------------------
 step4.py
 ------------------------------------------------------------
 
 Purpose:
-    Codes dominant location of referred Wagner/Africa Corps activity.
+    Codes the dominant location of referred Wagner/Africa Corps activity.
 
 Inputs:
     data/postStep3.csv
@@ -450,23 +430,12 @@ Inputs:
 Output:
     data/postStep4.csv
 
-Methodology:
-    - Merges article text from step1.
-    - Counts location markers for:
-        Mali,
-        other African countries,
-        Ukraine,
-        other locations.
-    - Applies tie-breaking logic.
-    - Codes mixed Mali + other location only when both are strongly present.
-    - Flags fallback or tie cases for review.
-
-Libraries:
-    pandas:
-        reading, merging, exporting.
-    re:
-        regex detection of location markers.
-
+Location categories:
+    1 = Mali
+    2 = Other African countries
+    3 = Ukraine
+    4 = Other location
+    5 = Mali and other location
 
 ------------------------------------------------------------
 step5.py
@@ -482,30 +451,19 @@ Inputs:
 Output:
     data/postStep5.csv
 
-Methodology:
-    - Identifies the main actor most closely associated with Wagner/Africa Corps.
-    - Actor categories:
-        1 = Malian army / junta,
-        2 = Russia / Russian state,
-        3 = France,
-        4 = UN / MINUSMA,
-        5 = ECOWAS / regional actors,
-        6 = local civilians,
-        7 = jihadist / terrorist groups,
-        8 = Western states broadly,
-        9 = no clear dominant actor,
-        10 = other.
-    - Uses segment weighting:
-        headline > lead > body.
-    - Adds proximity bonuses when associated actor appears in the same or nearby sentence as WG/AC terms.
-    - Flags unclear, tied, or broad-Western associated-actor cases.
+Actor categories:
+    1 = Malian army / junta
+    2 = Russia / Russian state
+    3 = France
+    4 = UN / MINUSMA
+    5 = ECOWAS / regional actors
+    6 = local civilians
+    7 = jihadist / terrorist groups
+    8 = Western states broadly
+    9 = no clear dominant actor
+    10 = other
 
-Libraries:
-    pandas:
-        dataframe handling.
-    re:
-        actor-pattern detection and sentence-level proximity logic.
-
+The script uses headline/lead/body weighting and sentence-level proximity to Wagner/Africa Corps references.
 
 ------------------------------------------------------------
 step6.py
@@ -521,39 +479,24 @@ Inputs:
 Output:
     data/postStep6.csv
 
-Methodology:
-    Codes eight binary frame variables:
-        Counterterrorism
-        Sovereignty
-        Human_Rights_Abuse
-        Anti_or_Neocolonialism
-        Western_Failure
-        Security_Effectiveness
-        Economic_Interests
-        Geopolitical_Rivalry
+Frame variables:
+    Counterterrorism
+    Sovereignty
+    Human_Rights_Abuse
+    Anti_or_Neocolonialism
+    Western_Failure
+    Security_Effectiveness
+    Economic_Interests
+    Geopolitical_Rivalry
 
-    - Uses headline, lead, and local WG/AC context.
-    - Applies frame-specific thresholds.
-    - Requires core terms for some frames:
-        anti/neocolonialism,
-        geopolitical rivalry,
-        economic interests.
-    - Suppresses over-interpretation in marginal and bulletin-style articles.
-    - Flags cases with no frames in relevant articles or too many active frames.
-
-Libraries:
-    pandas:
-        dataframe operations.
-    re:
-        frame lexicon matching and sentence extraction.
-
+The script uses headline, lead, and local target context, frame-specific thresholds, and suppressors for weak marginal or bulletin-style cases.
 
 ------------------------------------------------------------
 step7.py
 ------------------------------------------------------------
 
 Purpose:
-    Generates evaluative support indicators for stance, ambivalence, and legitimation.
+    Generates support indicators for stance, ambivalence, and legitimation.
 
 Inputs:
     data/postStep6.csv
@@ -562,33 +505,25 @@ Inputs:
 Output:
     data/postStep7.csv
 
-Methodology:
-    - Extracts local WG/AC context.
-    - Counts positive and negative stance signals.
-    - Uses hard and soft negative lexicons.
-    - Downweights reported or quoted claims.
-    - Codes Stance_Support:
-        1 = negative,
-        2 = neutral,
-        3 = positive,
-        4 = mixed/ambivalent,
-        5 = cannot determine.
-    - Codes Ambivalence_Support:
-        0 = no strong ambivalence,
-        1 = positive and negative signals both present.
-    - Codes Legitimation_Support:
-        1 = delegitimized,
-        2 = normalized / implicitly legitimized,
-        3 = explicitly legitimized,
-        4 = cannot determine.
-    - These variables are treated cautiously because pilot reliability was lower.
+Variables:
+    Stance_Support:
+        1 = negative
+        2 = neutral
+        3 = positive
+        4 = mixed/ambivalent
+        5 = cannot determine
 
-Libraries:
-    pandas:
-        dataframe handling.
-    re:
-        signal detection and sentence splitting.
+    Ambivalence_Support:
+        0 = no strong ambivalence
+        1 = positive and negative signals both present
 
+    Legitimation_Support:
+        1 = delegitimized
+        2 = normalized / implicitly legitimized
+        3 = explicitly legitimized
+        4 = cannot determine
+
+These indicators are interpreted cautiously because pilot reliability was lower than for more manifest variables.
 
 ------------------------------------------------------------
 step8.py
@@ -603,56 +538,28 @@ Input:
 Output:
     data/postStep8.csv
 
-Methodology:
-    - Computes discourse scores from coded frames and evaluative support variables.
-    - Discourse categories:
-        1 = sovereignty and emancipation,
-        2 = security and stabilization,
-        3 = violence and abuse,
-        4 = geopolitical competition,
-        5 = technocratic / factual reporting,
-        6 = mixed / no clear dominance.
-    - Uses tie-breaking logic based on explicit frame combinations.
-    - Flags mixed or suspicious factual-reporting cases for review.
-    - This variable is treated cautiously because pilot reliability was lower.
-
-Libraries:
-    pandas:
-        dataframe operations.
-
+Discourse categories:
+    1 = sovereignty and emancipation
+    2 = security and stabilization
+    3 = violence and abuse
+    4 = geopolitical competition
+    5 = technocratic / factual reporting
+    6 = mixed / no clear dominance
 
 ------------------------------------------------------------
 step9.py
 ------------------------------------------------------------
 
 Purpose:
-    Consolidates all pipeline coding outputs.
+    Consolidates original pipeline outputs.
 
 Inputs:
-    data/postStep1.csv
-    data/postStep2.csv
-    data/postStep3.csv
-    data/postStep4.csv
-    data/postStep5.csv
-    data/postStep6.csv
-    data/postStep7.csv
-    data/postStep8.csv
+    data/postStep1.csv through data/postStep8.csv
 
 Output:
     data/postConsolidated.csv
 
-Methodology:
-    - Merges all step outputs by Article_ID.
-    - Preserves article text, metadata, code values, notes, and review flags.
-    - Builds Review_Flag_Count, Any_Review_Flag, and Review_Sources.
-    - Builds Full_Text_For_LLM for later adjudication.
-
-Libraries:
-    pandas:
-        CSV loading, merging, exporting.
-    re:
-        article ID normalization.
-
+The script merges original pipeline codes, article text, metadata, support notes, and review flags. It creates Review_Flag_Count, Any_Review_Flag, Review_Sources, and Full_Text_For_LLM.
 
 ------------------------------------------------------------
 step10.py
@@ -668,227 +575,22 @@ Outputs:
     data/gemini_batch_payloads.jsonl
     data/gemini_batch_payloads.csv
 
-Methodology:
-    - Skips articles with Relevance = 1.
-    - Sends relevance 2, 3, and 4 articles to LLM review.
-    - Chooses prompt layer:
-        light = clearer cases,
-        full = review-flagged or ambiguous cases.
-    - Builds target-context excerpt around WG/AC sentences.
-    - Adds pipeline summary as structured support.
-    - Estimates token length roughly by character count.
-    - Adds pre-LLM pro-review support flag for auditing.
-
-Libraries:
-    pandas:
-        input/output and dataframe operations.
-    json:
-        writing JSONL payloads.
-    os:
-        directory creation.
-    re:
-        sentence splitting and target-context extraction.
-
-
-------------------------------------------------------------
-GEMINI/step12.py
-------------------------------------------------------------
-
-Purpose:
-    Submits LLM payloads to the Gemini API.
-
-Inputs:
-    data/gemini_batch_payloads.jsonl
-    prompts/gemini_system_instruction_v1.txt
-    APIkey.txt
-
-Outputs:
-    GEMINI/data/gemini_raw_outputs.jsonl
-    GEMINI/data/gemini_submission_log.csv
-    GEMINI/data/gemini_api_errors.jsonl
-
-Methodology:
-    - Sends each user payload to Gemini 2.5 Flash.
-    - Uses a system instruction prompt.
-    - Sets temperature to 0.
-    - Implements request-level retry logic.
-    - Supports continuation of previous runs.
-    - Supports test mode with a random small sample.
-    - Copies parent pipeline data into local GEMINI/data for self-contained execution.
-    - Saves full raw API JSON for auditability.
-
-Libraries:
-    os, pathlib:
-        path handling and directory management.
-    json:
-        JSONL reading and writing.
-    time:
-        sleep and backoff.
-    shutil:
-        copying data into the GEMINI workspace.
-    requests:
-        HTTP API calls to Gemini.
-    pandas:
-        writing submission logs.
-    random:
-        test-mode sampling.
-
-
-------------------------------------------------------------
-GEMINI/step13.py
-------------------------------------------------------------
-
-Purpose:
-    Parses, validates, and adjudicates Gemini outputs.
-
-Inputs:
-    GEMINI/data/gemini_raw_outputs.jsonl
-    GEMINI/data/gemini_batch_payloads.jsonl
-    GEMINI/data/postConsolidated.csv
-
-Outputs:
-    GEMINI/data/gemini_parsed_outputs.csv
-    GEMINI/data/gemini_parse_errors.csv
-    GEMINI/data/final_llm_coding_working.csv
-    GEMINI/data/final_llm_merge_issues.csv
-    GEMINI/data/final_conservative_adjudicated_table.csv
-    GEMINI/data/final_llm_authoritative_table.csv
-    GEMINI/data/final_manual_verification_table.csv
-    GEMINI/data/final_high_confidence_coding_table.csv
-
-Methodology:
-    - Selects the best raw record per Article_ID.
-    - Parses JSON from model responses.
-    - Removes code fences if needed.
-    - Validates required fields.
-    - Validates allowed code values.
-    - Merges valid LLM outputs with the consolidated pipeline table.
-    - Produces:
-        authoritative LLM table,
-        conservative adjudicated table,
-        manual verification table,
-        high-confidence subset.
-    - Applies conservative adjudication rules:
-        selected LLM upgrades are suppressed in short or bulletin-like cases,
-        pipeline values are preserved in certain high-risk disagreements,
-        broader-frame activations in weak context are controlled.
-    - Builds manual-check reasons.
-
-Libraries:
-    os, pathlib:
-        output directories and file paths.
-    json:
-        JSONL loading and JSON parsing.
-    re:
-        article ID normalization and JSON-block extraction.
-    pandas:
-        dataframe merging, validation tables, CSV output.
-
-
-------------------------------------------------------------
-local/step12.py
-------------------------------------------------------------
-
-Purpose:
-    Submits LLM payloads to a local Ollama model.
-
-Inputs:
-    data/gemini_batch_payloads.jsonl
-    prompts/gemini_system_instruction_v1.txt
-
-Outputs:
-    local/data/local_raw_outputs.jsonl
-    local/data/local_submission_log.csv
-    local/data/local_api_errors.jsonl
-
-Methodology:
-    - Sends prompts to Ollama chat API.
-    - Uses qwen2.5:14b-instruct.
-    - Adds strict JSON-only output enforcement.
-    - Explicitly instructs the model to copy Article_ID.
-    - Enforces binary variable constraints in the prompt.
-    - Supports continuation and batch reruns.
-    - Copies parent data into LOCAL/data.
-
-Libraries:
-    os, pathlib:
-        path handling.
-    json:
-        JSONL input/output.
-    time:
-        request spacing and retry backoff.
-    shutil:
-        data copying.
-    requests:
-        local Ollama HTTP requests.
-    pandas:
-        submission logs.
-    re:
-        extracting Article_ID from payload.
-
-
-------------------------------------------------------------
-local/step13.py
-------------------------------------------------------------
-
-Purpose:
-    Parses and adjudicates local Ollama outputs.
-
-Inputs:
-    local/data/local_raw_outputs.jsonl
-    local/data/gemini_batch_payloads.jsonl
-    local/data/postConsolidated.csv
-
-Outputs:
-    local/data/local_parsed_outputs.csv
-    local/data/local_parse_errors.csv
-    local/data/final_local_coding_working.csv
-    local/data/final_local_merge_issues.csv
-    local/data/final_local_conservative_adjudicated_table.csv
-    local/data/final_local_llm_authoritative_table.csv
-    local/data/final_local_manual_verification_table.csv
-    local/data/final_local_high_confidence_coding_table.csv
-
-Methodology:
-    Same general parsing, validation, merging, and conservative adjudication logic as
-    GEMINI/step13.py, but applied to local Ollama model outputs.
-
-Libraries:
-    os, pathlib:
-        paths and optional Excel export.
-    json:
-        JSONL and JSON parsing.
-    re:
-        JSON block extraction and ID normalization.
-    pandas:
-        dataframe processing and CSV/XLSX output.
-
+The script excludes relevance 1 cases, prepares light or full prompts depending on ambiguity and review flags, extracts local target context, and provides a structured pipeline summary to the model.
 
 ------------------------------------------------------------
 step11.py
 ------------------------------------------------------------
 
 Purpose:
-    Builds an expanded diagnostic table from the rule-based pipeline outputs.
+    Builds an expanded diagnostic table from rule-based pipeline outputs.
 
 Inputs:
-    data/postStep1.csv ... data/postStep8.csv
+    data/postStep1.csv through data/postStep8.csv
 
 Output:
     data/postDiagnostic.csv
 
-Methodology:
-    - Merges all intermediate step outputs.
-    - Preserves detailed notes, support counts, and review flags.
-    - Builds review metadata.
-    - Used mainly for debugging, audit, and inspection.
-
-Libraries:
-    pandas:
-        CSV loading, merging, exporting.
-    re:
-        ID normalization.
-
+This table preserves detailed notes, support counts, and review flags for audit and inspection.
 
 ------------------------------------------------------------
 stepB.py
@@ -907,49 +609,23 @@ Outputs:
     data/postStepB_duplicate_clusters.csv
     data/postStepB_cluster_members.csv
 
-Methodology:
-    - User selects relevance filter:
-        all,
-        2+,
-        3+,
-        4.
-    - Detects explicit external sources:
-        AFP,
-        Reuters,
-        AP,
-        Anadolu,
-        RFI,
-        France24,
-        BBC,
-        Le Monde,
-        Sputnik,
-        TASS, etc.
-    - Detects external source names in author field.
-    - Detects references to other Malian media.
-    - Detects republication and attribution phrases.
-    - Computes near-duplicate similarity using RapidFuzz.
-    - Builds duplicate pairs, duplicate clusters, and article-level duplicate indicators.
-    - Produces a republication index and likely_republished_flag.
+Main procedures:
+    - detects explicit external sources;
+    - detects agency, foreign media, and author-field source signals;
+    - detects references to other Malian media;
+    - detects attribution and republication phrases;
+    - computes near-duplicate similarity using RapidFuzz;
+    - creates duplicate clusters;
+    - creates source-attributed and likely-republished indicators.
 
-Libraries:
-    os:
-        file existence checks.
-    re:
-        source, attribution, and republication pattern detection.
-    itertools:
-        pairwise article comparisons.
-    pandas:
-        dataframe processing and CSV output.
-    rapidfuzz.fuzz:
-        fuzzy string similarity for near-duplicate detection.
-
+The source/republication layer is diagnostic. It does not prove editorial alignment or political endorsement.
 
 ------------------------------------------------------------
 stepBA.py
 ------------------------------------------------------------
 
 Purpose:
-    Supplementary Russian / Russia-attributed source environment analysis.
+    Supplementary Russian / Russia-attributed source-environment analysis.
 
 Inputs:
     data/postStepB.csv
@@ -957,87 +633,31 @@ Inputs:
     GEMINI/data/final_conservative_adjudicated_table.csv
 
 Outputs:
-    data/stepBA/postStepBA_russian_sources.csv
-    data/stepBA/postStepBA_russian_sources_review.csv
+    data/stepBA/
     data/stepBA/discussion/
     data/stepBA/figures/
 
-Methodology:
-    - Detects Russian state media, Russian news agencies, Russian official sources,
-      Russian embassy sources, Russian defence/MFA sources, and Russia-attributed claims.
-    - Separates Russian-source presence from Russian-source dominance.
-    - Computes Russian source score, attribution score, and non-Russian source score.
-    - Merges final coding layer.
-    - Compares frame prevalence between Russian-source and non-Russian-source subsets.
-    - Produces heatmaps and discussion notes.
-    - This is a supplementary source-environment layer, not a measure of editorial endorsement.
-
-Libraries:
-    os, pathlib:
-        output paths and directory creation.
-    re:
-        source-pattern detection.
-    datetime:
-        timestamped summaries.
-    pandas:
-        data processing and merging.
-    matplotlib:
-        heatmap export.
-    seaborn:
-        optional heatmap rendering.
-
+The script identifies Russian state-media, official, military, embassy, and attributed-claim signals, then compares frames between Russian-source and non-Russian-source subsets. This is a supplementary source-environment layer and does not measure editorial endorsement.
 
 ------------------------------------------------------------
 stepC.py
 ------------------------------------------------------------
 
 Purpose:
-    Selects candidate articles for qualitative critical discourse analysis.
+    Selects a candidate pool for qualitative critical discourse analysis.
 
 Inputs:
     data/postConsolidated.csv
     data/postStepB.csv
     GEMINI/data/final_conservative_adjudicated_table.csv
-    or local equivalent.
+    or local equivalent
 
 Outputs:
-    backend data folder:
-        postStepC_candidates.csv
-        postStepC_review.csv
-        postStepC_summary.txt
+    postStepC_candidates.csv
+    postStepC_review.csv
+    postStepC_summary.txt
 
-Methodology:
-    - User selects backend:
-        GEMINI,
-        LOCAL.
-    - Merges consolidated pipeline data, adjudicated final coding, and StepB enrichment.
-    - Filters qualitatively eligible articles.
-    - Excludes or penalizes:
-        bulletin-style articles,
-        very short texts,
-        thin target references,
-        near-duplicates,
-        likely republished texts.
-    - Scores candidate articles by:
-        dominant-case value,
-        strong evaluative/framing value,
-        anomaly value,
-        transitional value,
-        outlet-contrastive value,
-        discursive density.
-    - Balances selected candidate pool across categories and outlets.
-    - Produces a 24-article candidate pool for researcher review.
-
-Libraries:
-    os:
-        paths and output directories.
-    re:
-        ID normalization and sentence splitting.
-    pandas:
-        merging, scoring, selection, export.
-    numpy:
-        mode and missing-value support.
-
+The script scores eligible relevance 3 and 4 texts according to dominant, strong, anomalous, transitional, and outlet-contrastive value, while penalizing short, bulletin-style, near-duplicate, and likely republished material.
 
 ------------------------------------------------------------
 stepD.py
@@ -1057,461 +677,180 @@ Outputs:
     data/postStepD_prigozhin_mutiny_summary.txt
     figures/stepD_prigozhin_mutiny_timeline_*.png
 
-Methodology:
-    - Merges consolidated corpus with conservative adjudicated coding.
-    - Classifies actor subsets:
-        Wagner_only,
-        AC_only,
-        Both_mentioned.
-    - Detects Prigozhin-any and strict mutiny-event references.
-    - Strict flag requires Prigozhin/Wagner/Russia context plus mutiny, rebellion,
-      Moscow, Rostov, or June 2023 event language.
-    - Aggregates monthly counts and percentages by actor subset and relevance filter.
-    - Produces timeline figures with denominator panels.
+The script detects broad Prigozhin references and stricter June 2023 mutiny references, then aggregates them by actor subset and period.
 
-Libraries:
-    os, pathlib:
-        paths and output directories.
-    re:
-        lexical event detection and sentence splitting.
-    unicodedata:
-        accent-insensitive text normalization.
-    datetime:
-        summary timestamp.
-    pandas:
-        merging, grouping, monthly tables.
-    matplotlib:
-        timeline figures.
+------------------------------------------------------------
+stepE.py
+------------------------------------------------------------
 
+Purpose:
+    Creates an article-specific qualitative review corpus for close reading and discourse interpretation.
 
-============================================================
-7. CORPUS FOLDER SCRIPTS
-============================================================
+Inputs:
+    data/postConsolidated.csv
+    GEMINI/data/final_conservative_adjudicated_table.csv
+    data/postStepB.csv
+    data/stepBA/discussion/stepBA_russian_sources_with_final_coding.csv, if available
+
+Outputs:
+    data/stepEarticle/
+        stepEarticle_candidates_all.csv
+        stepEarticle_ranked_candidates.csv
+        stepEarticle_selected_review_corpus.csv
+        stepEarticle_selected_review_corpus.txt
+        stepEarticle_existing_thesis_cases.csv
+        stepEarticle_summary.txt
+
+The script identifies potential qualitative cases involving:
+    - critical Wagner representation;
+    - mercenary labels;
+    - human-rights framing;
+    - source-attributed critical material;
+    - anti-French displacement;
+    - Russia-attributed but non-positive material;
+    - Africa Corps successor framing.
+
+Final qualitative selection remains researcher-led.
+
+======================================================================
+8. GEMINI AND LOCAL LLM BRANCHES
+======================================================================
+
+Location:
+    Full_Corpus/pilot/GEMINI/
+    Full_Corpus/pilot/LOCAL/
+
+GEMINI/step12.py
+
+Purpose:
+    Submits payloads to Gemini 2.5 Flash.
+
+Inputs:
+    data/gemini_batch_payloads.jsonl
+    prompts/gemini_system_instruction_v1.txt
+    APIkey.txt
+
+Outputs:
+    GEMINI/data/gemini_raw_outputs.jsonl
+    GEMINI/data/gemini_submission_log.csv
+    GEMINI/data/gemini_api_errors.jsonl
+
+The script uses standardized system instructions, temperature 0, retry/backoff logic, continuation support, and raw API-output logging.
+
+GEMINI/step13.py
+
+Purpose:
+    Parses, validates, merges, and adjudicates Gemini outputs.
+
+Outputs:
+    GEMINI/data/gemini_parsed_outputs.csv
+    GEMINI/data/gemini_parse_errors.csv
+    GEMINI/data/final_llm_coding_working.csv
+    GEMINI/data/final_llm_merge_issues.csv
+    GEMINI/data/final_conservative_adjudicated_table.csv
+    GEMINI/data/final_llm_authoritative_table.csv
+    GEMINI/data/final_manual_verification_table.csv
+    GEMINI/data/final_high_confidence_coding_table.csv
+
+The conservative table contains Adj_V* values and applies rule-based fallback conditions to selected high-risk cases.
+
+LOCAL/step12.py and LOCAL/step13.py
+
+Purpose:
+    Run an equivalent local branch using Ollama and qwen2.5:14b-instruct.
+
+The local branch follows the same broad architecture: structured prompts, strict JSON output enforcement, parsing, validation, and conservative adjudication. It is retained primarily for comparison, audit, and robustness purposes.
+
+======================================================================
+9. PILOT RELIABILITY WORKFLOW
+======================================================================
+
+Location:
+    Final_Pilot/RELIABILITY/
+
+Main scripts:
+    pilot1.py
+    pilot2.py
+    pilot3.py
+    heatmaps.py
+    DBplot.py
+
+The pilot workflow compares:
+    - five human coders;
+    - benchmark LLM coders;
+    - the local rule-based pipeline;
+    - Gemini operational outputs;
+    - local Ollama outputs;
+    - conservative and high-confidence downstream layers.
+
+Reliability procedures include:
+    - Krippendorff’s alpha;
+    - percent agreement;
+    - Cohen’s kappa;
+    - comparison with a human-majority reference;
+    - comparison with pipeline coding;
+    - distance matrices;
+    - output-layer selection diagnostics.
+
+The pilot selected the Gemini conservative output as the preferred adjudicated layer for the corrected article workflow because it offered a balanced position between human-majority alignment and pipeline consistency.
+
+======================================================================
+10. ORIGINAL THESIS CORPUS WORKSPACE
+======================================================================
 
 Location:
     Full_Corpus/CORPUS/
 
+Main scripts:
+    corpus1.py through corpus8.py
+    synthesis.py
 
-------------------------------------------------------------
+Important note:
+    The original CORPUS workspace is preserved as used for the thesis. Its review_master.csv contains original pipeline operational codes and did not merge the conservative adjudicated values into the final downstream coding columns.
+
+Main scripts:
+
 corpus1.py
-------------------------------------------------------------
+    Copies selected pilot and LLM outputs into CORPUS/data.
+    Builds review_master.csv and descriptive corpus profiles.
 
-Purpose:
-    Builds the main CORPUS workspace from pilot outputs.
-
-Inputs:
-    Full_Corpus/pilot/data/
-    Full_Corpus/pilot/GEMINI/data/
-    Full_Corpus/pilot/local/data/ optional
-
-Outputs:
-    CORPUS/data/review_master.csv
-    CORPUS/data/corpus_overview.csv
-    CORPUS/data/relevance_profile.csv
-    CORPUS/data/outlet_profile.csv
-    CORPUS/data/representation_profile.csv
-    CORPUS/data/frame_profile.csv
-    CORPUS/data/review_profile.csv
-    CORPUS/data/source_republication_profile.csv
-    CORPUS/data/adjudication_profile.csv
-    CORPUS/tables/
-    CORPUS/figures/
-    CORPUS/summary/
-    CORPUS/schemata/
-
-Methodology:
-    - Copies important pipeline, Gemini, and local outputs into CORPUS/data.
-    - Builds review_master.csv as the central analysis table.
-    - Adds presence flags for Gemini/local outputs.
-    - Produces descriptive corpus overview tables.
-    - Produces basic bar charts.
-    - Creates Mermaid workflow diagrams.
-
-Libraries:
-    os:
-        directory operations.
-    shutil:
-        copying outputs.
-    pathlib:
-        robust path handling.
-    datetime:
-        summary timestamps.
-    pandas:
-        CSV loading, merging, profile tables.
-    matplotlib:
-        bar charts.
-
-
-------------------------------------------------------------
 corpus2.py
-------------------------------------------------------------
-
-Purpose:
     Creates analytical subsets and evidence packs.
 
-Input:
-    CORPUS/data/review_master.csv
-
-Outputs:
-    CORPUS/subsets/
-    CORPUS/evidence/
-    CORPUS/summary/corpus2_subset_summary.csv
-
-Methodology:
-    - Builds subsets by relevance, actor, label, location, associated actor, frame,
-      discourse, review status, source/republication, and special analytical criteria.
-    - Builds target-context excerpts around WG/AC mentions.
-    - Produces evidence packs for later qualitative checking.
-
-Libraries:
-    re:
-        target-context extraction and sentence splitting.
-    pathlib:
-        output paths.
-    datetime:
-        summaries.
-    pandas:
-        subset filtering and CSV export.
-
-
-------------------------------------------------------------
 corpus3.py
-------------------------------------------------------------
+    Generates keyword-in-context concordance outputs.
 
-Purpose:
-    Generates KWIC concordance outputs.
-
-Input:
-    CORPUS/data/review_master.csv
-
-Outputs:
-    CORPUS/kwic/
-    CORPUS/concordance/
-    CORPUS/summary/corpus3_summary.txt
-
-Methodology:
-    - Defines keyword groups:
-        core actor terms,
-        labels,
-        security terms,
-        sovereignty terms,
-        abuse terms,
-        anti/neocolonial terms,
-        Western failure terms,
-        security effectiveness terms,
-        economic terms,
-        Mali state terms,
-        external actor terms,
-        geopolitical terms,
-        source attribution terms.
-    - Extracts keyword-in-context rows.
-    - Exports per-keyword and per-group concordance files.
-    - Builds keyword summary, group summary, outlet profile, and subset profile.
-
-Libraries:
-    re:
-        keyword matching and sentence splitting.
-    pathlib:
-        paths.
-    datetime:
-        summary timestamp.
-    pandas:
-        KWIC table construction and export.
-
-
-------------------------------------------------------------
 corpus4.py
-------------------------------------------------------------
+    Produces lexical and KWIC summaries.
 
-Purpose:
-    Summarizes lexical and KWIC outputs.
-
-Inputs:
-    review_master.csv
-    kwic_all_keywords.csv
-    kwic_keyword_summary.csv
-    kwic_group_summary.csv
-    keyword_outlet_profile.csv
-    keyword_subset_profile.csv
-
-Outputs:
-    CORPUS/lexical/
-    CORPUS/figures/
-    CORPUS/summary/corpus4_summary.txt
-    CORPUS/summary/corpus4_lexical_findings.txt
-
-Methodology:
-    - Identifies top keywords overall.
-    - Identifies top keyword groups.
-    - Builds top keywords by subset.
-    - Builds outlet keyword profiles.
-    - Identifies repeated sentence patterns.
-    - Exports lexical coverage summaries and figures.
-
-Libraries:
-    re:
-        repeated sentence normalization.
-    pathlib:
-        paths.
-    datetime:
-        summaries.
-    pandas:
-        grouping and aggregation.
-    matplotlib:
-        bar charts.
-
-
-------------------------------------------------------------
 corpus5.py
-------------------------------------------------------------
+    Produces normalized lexical profiles and word clouds.
 
-Purpose:
-    Performs lexical normalization and word-cloud generation.
-
-Input:
-    CORPUS/data/review_master.csv
-
-Outputs:
-    CORPUS/lexical_norm/
-    CORPUS/figures/wordclouds/
-    CORPUS/summary/corpus5_summary.txt
-
-Methodology:
-    - Builds full article text.
-    - Tokenizes text.
-    - Applies stopword removal.
-    - Supports four token modes:
-        surface,
-        lemma,
-        custom normalization,
-        analytical grouping.
-    - Creates top-token tables for selected subsets.
-    - Creates word clouds.
-    - Optional spaCy lemmatization is used when a French model is available.
-
-Libraries:
-    re:
-        tokenization.
-    pathlib:
-        output paths.
-    datetime:
-        summaries.
-    collections.Counter:
-        token counting.
-    pandas:
-        subset tables and token profiles.
-    matplotlib:
-        word-cloud figure rendering.
-    wordcloud:
-        word cloud generation.
-    spacy:
-        optional French lemmatization.
-
-
-------------------------------------------------------------
 corpus6.py
-------------------------------------------------------------
+    Produces exploratory BERTopic outputs.
 
-Purpose:
-    Exploratory BERTopic topic modelling.
-
-Input:
-    CORPUS/data/review_master.csv
-
-Outputs:
-    CORPUS/topics/relevance4/
-    CORPUS/topics/africa_corps_or_both/
-    CORPUS/topics/corpus6_summary.csv
-    CORPUS/figures/
-    CORPUS/summary/corpus6_summary.txt
-
-Methodology:
-    - Runs BERTopic on:
-        relevance 4 articles,
-        Africa Corps or both-mentioned articles.
-    - Cleans topic text with French/custom stopwords.
-    - Uses sentence-transformer embeddings.
-    - Uses UMAP for dimensionality reduction.
-    - Uses HDBSCAN for clustering.
-    - Exports topic info, topic terms, representative documents, outlet/year distributions.
-    - Builds broader topic-family groupings from micro-topics.
-    - This script is exploratory and supplementary, not a primary coding layer.
-
-Libraries:
-    re:
-        topic-text cleaning.
-    pathlib:
-        output paths.
-    datetime:
-        summaries.
-    collections.Counter:
-        topic family labels.
-    pandas:
-        topic tables.
-    matplotlib:
-        bar charts.
-    bertopic:
-        topic modelling.
-    sentence_transformers:
-        embeddings.
-    umap:
-        dimensionality reduction.
-    hdbscan:
-        clustering.
-    sklearn.feature_extraction.text:
-        CountVectorizer and TfidfVectorizer.
-    sklearn.cluster:
-        AgglomerativeClustering.
-    numpy:
-        clustering labels and numerical operations.
-
-
-------------------------------------------------------------
 corpus7.py
-------------------------------------------------------------
+    Produces exploratory French-language NER outputs.
 
-Purpose:
-    Exploratory named-entity recognition.
-
-Input:
-    CORPUS/data/review_master.csv
-
-Outputs:
-    CORPUS/ner/
-    CORPUS/summary/corpus7_summary.txt
-    CORPUS/summary/corpus7_ner_notes.txt
-
-Methodology:
-    - Uses French spaCy NER.
-    - Extracts article-level and sentence-level entities.
-    - Keeps entity types:
-        PER / PERSON,
-        ORG,
-        GPE,
-        LOC,
-        NORP.
-    - Applies custom normalization for key entities:
-        Russia,
-        France,
-        FAMa,
-        Assimi Goita,
-        MINUSMA,
-        ECOWAS,
-        jihadist groups, etc.
-    - Builds entity profiles overall, by subset, by outlet, and by label.
-    - Builds sentence-level co-occurrence with Wagner/Africa Corps.
-
-Libraries:
-    re:
-        sentence splitting and target detection.
-    pathlib:
-        output paths.
-    datetime:
-        summaries.
-    collections.Counter:
-        entity counting.
-    pandas:
-        entity tables.
-    spacy:
-        French named-entity recognition.
-
-
-------------------------------------------------------------
 corpus8.py
-------------------------------------------------------------
+    Produces synthesis tables and writing-support files.
 
-Purpose:
-    Integrated synthesis layer for writing support.
-
-Inputs:
-    review_master.csv
-    corpus overview/profile files
-    evidence packs
-    KWIC outputs
-    lexical outputs
-    NER outputs
-    BERTopic outputs
-
-Outputs:
-    CORPUS/synthesis/
-    CORPUS/summary/chapter52_working_notes.txt
-    CORPUS/summary/discussion_working_notes.txt
-    CORPUS/summary/corpus8_summary.txt
-
-Methodology:
-    - Integrates structured coding, lexical, NER, source/republication, and topic outputs.
-    - Produces writing-oriented synthesis tables:
-        corpus_wide_synthesis.csv,
-        actor_representation_synthesis.csv,
-        frame_discourse_synthesis.csv,
-        outlet_difference_synthesis.csv,
-        source_republication_synthesis.csv,
-        wagner_vs_ac_integrated_comparison.csv,
-        source_attributed_vs_nonattributed_integrated_comparison.csv,
-        review_vs_highconfidence_integrated_comparison.csv,
-        key_findings_ch52.csv,
-        key_findings_discussion.csv.
-    - Does not create new coding.
-    - Reorganizes existing outputs into interpretable thesis-support tables.
-
-Libraries:
-    os:
-        file checks.
-    pathlib:
-        paths.
-    datetime:
-        summaries.
-    pandas:
-        loading and synthesis tables.
-
-
-------------------------------------------------------------
 synthesis.py
-------------------------------------------------------------
+    Exports selected discussion-support materials into a bundle and ZIP archive.
 
-Purpose:
-    Exports the most useful discussion-support files into one folder and ZIP archive.
+The lexical, BERTopic, and NER layers are supplementary and exploratory. They support interpretation but do not replace codebook-based analysis or close reading.
 
-Outputs:
-    CORPUS/discussion_export/
-    CORPUS/discussion_export_bundle.zip
-
-Methodology:
-    - Copies selected synthesis, NER, lexical, topic, source/republication, and profile files.
-    - Writes a manifest.
-    - Writes a README for the export bundle.
-    - Creates a ZIP archive.
-
-Libraries:
-    pathlib:
-        paths.
-    shutil:
-        file copying.
-    csv:
-        manifest writing.
-    zipfile:
-        ZIP archive creation.
-    datetime:
-        timestamp.
-
-
-============================================================
-8. FINAL ANALYSIS SCRIPT
-============================================================
+======================================================================
+11. ORIGINAL THESIS ANA WORKSPACE
+======================================================================
 
 Location:
-    Full_Corpus/ANA/ANALYSIS.py
+    Full_Corpus/ANA/
 
-Purpose:
-    Produces final chapter-oriented analysis outputs.
+Main script:
+    ANALYSIS.py
 
-Inputs:
-    CORPUS/data/review_master.csv
-    pilot/data/postConsolidated.csv
-    pilot/data/postStepB.csv
-    adjudicated conservative table if available
-
-Outputs:
+The original ANA workflow creates:
     ANA/output/
         timeline/
         chapter_5_2/
@@ -1519,289 +858,90 @@ Outputs:
         diagnostics/
         cda_sample/
 
-Methodology:
-    - Harmonizes final variables from adjudicated or fallback columns.
-    - Derives period groups:
-        P1_Early_Wagner,
-        P2_Mutiny_Transition,
-        P3_AfricaCorps_Phase.
-    - Builds actor subsets:
-        Wagner_only,
-        AC_or_Both,
-        Other.
-    - Exports:
-        timeline figures,
-        corpus overview tables,
-        quantitative content-analysis tables,
-        frame and discourse profiles,
-        outlet profiles,
-        source/republication profiles,
-        chi-square diagnostics,
-        logistic regression summaries where possible,
-        CDA sample text bundles,
-        diagnostic tables for missing/invalid values.
-    - This is the main chapter-output script.
+The script harmonizes coding variables and creates chapter-oriented tables, figures, diagnostics, source/republication profiles, chi-square tests, optional regression outputs, and CDA text bundles.
 
-Libraries:
-    pathlib:
-        path handling.
-    datetime:
-        timestamps.
-    argparse:
-        command-line flags.
-    math:
-        Cramér's V calculation.
-    re:
-        ID and filename normalization.
-    warnings:
-        suppressing non-critical warnings.
-    numpy:
-        numerical operations.
-    pandas:
-        data analysis and export.
-    matplotlib:
-        plots.
-    seaborn:
-        optional heatmaps.
-    scipy.stats:
-        chi-square tests.
-    statsmodels.formula.api:
-        logistic regression models.
+Important provenance note:
+    Because the original ANA workflow read CORPUS/data/review_master.csv and that file did not contain the conservative Adj_V* columns, the original ANA results used pipeline coding values through fallback logic. These outputs correspond to the frozen submitted thesis layer.
 
-
-============================================================
-9. FINAL_PILOT RELIABILITY SCRIPTS
-============================================================
+======================================================================
+12. CORRECTED ARTICLE WORKFLOW
+======================================================================
 
 Location:
-    Final_Pilot/RELIABILITY/
-
-
-------------------------------------------------------------
-pilot1.py
-------------------------------------------------------------
+    Full_Corpus/CORPUS_article/
+    Full_Corpus/ANA_article/
 
 Purpose:
-    Builds master comparison tables for pilot reliability analysis.
+    To create a separate article-specific workflow using Gemini conservative adjudication with pipeline fallback as the primary final coding layer.
 
-Methodology:
-    - Reads human coder and benchmark model outputs.
-    - Reads pipeline, Gemini, and local branch outputs.
-    - Normalizes all variables into the same final code structure.
-    - Applies explicit N/A coding for irrelevant articles.
-    - Produces long and wide comparison tables.
+Creation:
+    The article folders were created as copies of the original CORPUS and ANA workspaces. Their generated outputs were cleared, and selected scripts were patched.
 
-Libraries:
-    os, re, json:
-        file handling and parsing coder TXT/JSON outputs.
-    pandas:
-        dataframe construction and export.
+CORPUS_article/corpus1.py correction:
+    - merges final_conservative_adjudicated_table.csv directly into review_master;
+    - preserves original pipeline coding variables as Pipeline_* fields;
+    - creates Final_* variables using Adj_V* values with original pipeline fallback;
+    - uses corrected Final_* values for operational downstream article coding;
+    - records:
+        Article_Coding_Layer =
+        Gemini conservative adjudication with pipeline fallback.
 
+ANA_article/ANALYSIS.py correction:
+    - reads:
+        CORPUS_article/data/review_master.csv
+      instead of:
+        CORPUS/data/review_master.csv;
+    - uses corrected Final_* values for article-level analysis;
+    - exports corrected article-specific tables and figures to:
+        ANA_article/output/.
 
-------------------------------------------------------------
-pilot2.py
-------------------------------------------------------------
+The corrected article layer produced the following core corpus distribution:
 
-Purpose:
-    Computes pilot reliability and agreement statistics.
+    Total corpus: 2,474 articles
+    Relevance 1: 498 articles
+    Relevance 2: 947 articles
+    Relevance 3: 278 articles
+    Relevance 4: 751 articles
+    Relevance 2+: 1,976 articles
+    Relevance 3+: 1,029 articles
 
-Methodology:
-    - Computes Krippendorff's alpha for human coders.
-    - Builds human-majority reference.
-    - Computes pairwise agreement and Cohen's kappa:
-        benchmark models vs pipeline,
-        benchmark models vs human majority,
-        operational branches vs pipeline,
-        operational branches vs human majority,
-        high-confidence outputs vs references.
-    - Exports variable-level reliability summaries, N/A diagnostics, and coverage diagnostics.
+These figures differ from the original thesis output because the original thesis ANA layer used pipeline coding, whereas the article workflow uses conservative Gemini adjudication with pipeline fallback.
 
-Libraries:
-    os:
-        paths.
-    numpy:
-        numerical arrays and NaN handling.
-    pandas:
-        tables.
-    collections.Counter:
-        majority vote with tie handling.
-    sklearn.metrics.cohen_kappa_score:
-        Cohen's kappa.
-    krippendorff:
-        Krippendorff's alpha.
+Suggested article workflow sequence:
 
+    cd Full_Corpus/CORPUS_article
+    python corpus1.py
+    python corpus2.py
+    python corpus3.py
+    python corpus4.py
+    python corpus5.py
+    python corpus6.py      [optional/exploratory]
+    python corpus7.py      [optional/exploratory]
+    python corpus8.py      [optional synthesis]
 
-------------------------------------------------------------
-pilot3.py
-------------------------------------------------------------
+    cd Full_Corpus/ANA_article
+    python ANALYSIS.py --all
 
-Purpose:
-    Selects the most suitable output layer from pilot comparison.
+For the journal article, all descriptive statistics, tables, and figures should be generated from ANA_article/output/, not from ANA/output/.
 
-Methodology:
-    - Builds human-majority reference.
-    - Compares output layers against:
-        human majority,
-        benchmark LLM coders,
-        pre-LLM pipeline.
-    - Computes agreement, distance, critical-variable agreement, weighted score, and balance score.
-    - Produces dumbbell plots, heatmaps, and full distance matrix.
-    - Supports selection of Gemini conservative adjudicated output.
+======================================================================
+13. MAIN OUTPUTS
+======================================================================
 
-Libraries:
-    os:
-        paths.
-    numpy:
-        numerical operations.
-    pandas:
-        data tables.
-    matplotlib:
-        dumbbell plots.
-    seaborn:
-        heatmaps.
-    tqdm:
-        progress bars.
-
-
-------------------------------------------------------------
-heatmaps.py
-------------------------------------------------------------
-
-Purpose:
-    Produces additional heatmaps and output-layer comparison summaries.
-
-Methodology:
-    - Builds human-majority reference.
-    - Computes agreement, distance, and kappa between output layers and benchmark references.
-    - Produces:
-        output layer vs benchmark summary,
-        dumbbell plot,
-        benchmark heatmap,
-        full distance matrix.
-
-Libraries:
-    os:
-        paths.
-    pandas:
-        tables.
-    numpy:
-        numerical calculations.
-    matplotlib:
-        plots.
-    seaborn:
-        heatmaps.
-    sklearn.metrics.cohen_kappa_score:
-        kappa scores.
-
-
-------------------------------------------------------------
-DBplot.py
-------------------------------------------------------------
-
-Purpose:
-    Produces a simplified dumbbell plot of output-layer alignment.
-
-Methodology:
-    - Compares each target output layer against:
-        human majority,
-        local pipeline draft.
-    - Computes mean agreement and distance.
-    - Exports summary table and plot.
-
-Libraries:
-    os:
-        paths.
-    pandas:
-        data tables.
-    numpy:
-        numerical calculations.
-    matplotlib:
-        dumbbell plot.
-
-
-============================================================
-10. FINAL_PILOT PILOT SCRIPTS
-============================================================
-
-The scripts in Final_Pilot/pilot/ mirror the full-corpus workflow but use the smaller pilot
-dataset and often export XLSX as well as CSV.
-
-Key differences:
-    - The pilot uses data/pilot.xlsx as initial input.
-    - Several outputs are XLSX-based for easier manual inspection.
-    - The pilot includes both Gemini and local branch outputs.
-    - Reliability scripts then compare human coders, benchmark models, pipeline, and adjudication layers.
-
-Methodologically:
-    - Final_Pilot/pilot/step1.py to step9.py correspond to Full_Corpus/pilot/step1.py to step9.py.
-    - Final_Pilot/pilot/step10.py builds pilot LLM payloads.
-    - Final_Pilot/pilot/GEMINI/step12.py and step13.py run and parse Gemini pilot outputs.
-    - Final_Pilot/pilot/local/step12.py and step13.py run and parse local Ollama pilot outputs.
-    - Final_Pilot/pilot/stepA.py exports a clean draft coding table.
-    - Final_Pilot/pilot/stepB.py performs source/republication and duplicate diagnostics.
-
-Main libraries:
-    pandas
-    re
-    json
-    os
-    time
-    requests
-    rapidfuzz
-    openpyxl
-
-
-============================================================
-11. LLM PROMPTING AND VALIDATION
-============================================================
-
-LLM adjudication is constrained by:
-
-1. fixed system prompt,
-2. structured user payload,
-3. predefined codebook variables,
-4. JSON-only response requirement,
-5. strict required-field validation,
-6. strict allowed-value validation,
-7. conservative post-processing and fallback rules.
-
-Required LLM output fields include:
-
-    Article_ID
-    V04_Relevance_Final
-    V05_Actor_Mention_Final
-    V06_Successor_Frame_Final
-    V07_Dominant_Label_Final
-    V08_Stance_Final
-    V09_Dominant_Location_Final
-    V10_Ambivalence_Final
-    V11_Legitimation_Final
-    V12_Counterterrorism_Final
-    V13_Sovereignty_Final
-    V14_Human_Rights_Abuse_Final
-    V15_Anti_or_Neocolonialism_Final
-    V16_Western_Failure_Final
-    V17_Security_Effectiveness_Final
-    V18_Economic_Interests_Final
-    V19_Geopolitical_Rivalry_Final
-    V20_Main_Associated_Actor_Final
-    V21_Dominant_Discourse_Final
-    LLM_Review_Note
-    Pro_Review_Candidate
-    Pro_Review_Reason
-
-Invalid model outputs are not silently accepted. They are written to parse or validation error files.
-
-
-============================================================
-12. MAIN OUTPUTS USED IN THE THESIS
-============================================================
-
-Core full-corpus pipeline:
+Original thesis-layer outputs:
     Full_Corpus/pilot/data/postConsolidated.csv
-
-Main adjudicated coding table:
     Full_Corpus/pilot/GEMINI/data/final_conservative_adjudicated_table.csv
+    Full_Corpus/CORPUS/data/review_master.csv
+    Full_Corpus/ANA/output/
+
+Corrected article-layer outputs:
+    Full_Corpus/CORPUS_article/data/review_master.csv
+    Full_Corpus/ANA_article/output/analysis_master_clean.csv
+    Full_Corpus/ANA_article/output/timeline/
+    Full_Corpus/ANA_article/output/chapter_5_2/
+    Full_Corpus/ANA_article/output/chapter_5_3/
+    Full_Corpus/ANA_article/output/diagnostics/
+    Full_Corpus/ANA_article/output/cda_sample/
 
 Source and republication layer:
     Full_Corpus/pilot/data/postStepB.csv
@@ -1809,161 +949,108 @@ Source and republication layer:
 Russian-source supplementary layer:
     Full_Corpus/pilot/data/stepBA/
 
-Qualitative candidate selection:
-    Full_Corpus/pilot/GEMINI/data/postStepC_candidates.csv
-    Full_Corpus/pilot/GEMINI/data/postStepC_review.csv
-
-Prigozhin/Wagner mutiny diagnostic:
-    Full_Corpus/pilot/data/postStepD_prigozhin_mutiny_*.csv
-
-Central corpus master:
-    Full_Corpus/CORPUS/data/review_master.csv
-
-Chapter-oriented analysis:
-    Full_Corpus/ANA/output/
+Article qualitative review corpus:
+    Full_Corpus/pilot/data/stepEarticle/
 
 Pilot reliability outputs:
     Final_Pilot/REL/data/
 
-
-============================================================
-13. REPRODUCIBILITY CAUTIONS
-============================================================
+======================================================================
+14. REPRODUCIBILITY CAUTIONS
+======================================================================
 
 1. The corpus is availability-based.
    It should not be interpreted as a statistically representative sample of all Malian media.
 
 2. The retrieval strategy is explicit-term based.
-   Articles that refer indirectly to Russian instructors or contractors without the target terms
-   may be underrepresented.
+   Articles referring indirectly to Russian instructors or contractors without target terminology may be underrepresented.
 
-3. Online news is only one part of Mali's information environment.
-   Radio, television, social media, WhatsApp, TikTok, oral communication, and local-language
-   media are not directly analysed.
+3. Online news is only one part of Mali’s information environment.
+   Radio, television, social media, WhatsApp, TikTok, oral communication, and local-language media are not directly analysed.
 
-4. Some variables are more reliable than others.
-   Pilot reliability was stronger for manifest variables such as relevance, actor mention,
-   successor framing, location, and several frames. Stance, legitimation, geopolitical rivalry,
-   and dominant discourse were less stable and are interpreted cautiously.
+4. Variables differ in reliability.
+   Pilot reliability was stronger for manifest variables such as actor mention, successor framing, location, and several frame indicators. Stance, legitimation, geopolitical rivalry, and dominant discourse were less stable and should be interpreted cautiously.
 
 5. LLM outputs are not treated as final truth.
-   They are constrained, parsed, validated, and conservatively adjudicated.
+   They are constrained through prompts, parsed, validated, compared with the pipeline, and conservatively adjudicated.
 
 6. Source/republication detection is diagnostic.
-   It does not prove editorial endorsement or political alignment.
+   It does not prove editorial endorsement, political alignment, or authorial intent.
 
 7. KWIC, lexical, NER, BERTopic, and word-cloud outputs are exploratory.
-   They support interpretation but do not replace close reading or codebook-based analysis.
+   They support interpretation and future research but do not replace close reading or codebook-based analysis.
 
-8. API-based outputs may change if model versions change.
-   Gemini API behaviour may not be perfectly reproducible over time.
+8. API-based outputs may change over time.
+   Gemini API behaviour may not be perfectly reproducible if model versions or API infrastructure change.
 
-9. Local Ollama outputs depend on local hardware and model version.
+9. Local Ollama outputs depend on local hardware and model versions.
 
+10. The original thesis and corrected article workflows use distinct downstream analytical layers.
+    Original thesis statistics should be reproduced from:
+        Full_Corpus/CORPUS/
+        Full_Corpus/ANA/
 
-============================================================
-14. MINIMAL REPRODUCTION SEQUENCE
-============================================================
+    Corrected article statistics should be reproduced from:
+        Full_Corpus/CORPUS_article/
+        Full_Corpus/ANA_article/
 
-To reproduce the main full-corpus pipeline:
+======================================================================
+15. INTERPRETING OUTPUTS
+======================================================================
 
-    cd Full_Corpus/pilot
-
-    python step1.py
-    python step2.py
-    python step3.py
-    python step4.py
-    python step5.py
-    python step6.py
-    python step7.py
-    python step8.py
-    python step9.py
-    python step10.py
-
-    cd GEMINI
-    python step12.py
-    python step13.py
-
-    cd ..
-    python stepB.py
-    python stepBA.py
-    python stepC.py
-    python stepD.py
-
-    cd ../CORPUS
-    python corpus1.py
-    python corpus2.py
-    python corpus3.py
-    python corpus4.py
-    python corpus5.py
-    python corpus7.py
-    python corpus8.py
-
-    cd ../ANA
-    python ANALYSIS.py --all
-
-Optional exploratory topic modelling:
-
-    cd Full_Corpus/CORPUS
-    python corpus6.py
-
-
-============================================================
-15. HOW TO INTERPRET THE OUTPUTS
-============================================================
-
-Primary outputs:
+Primary original thesis outputs:
     postConsolidated.csv
-    final_conservative_adjudicated_table.csv
-    review_master.csv
-    ANA/output/
+    original CORPUS/data/review_master.csv
+    original ANA/output/
+
+Primary corrected article outputs:
+    Gemini conservative adjudicated table
+    CORPUS_article/data/review_master.csv
+    ANA_article/output/
 
 Diagnostic outputs:
-    parse errors,
-    merge issues,
-    manual verification tables,
-    review flags,
-    duplicate clusters,
-    source/republication profiles.
+    parse errors
+    merge issues
+    manual verification tables
+    review flags
+    duplicate clusters
+    source/republication profiles
+    provenance documentation
 
 Supplementary outputs:
-    KWIC,
-    lexical normalization,
-    word clouds,
-    NER,
-    BERTopic,
-    synthesis tables.
+    KWIC
+    lexical normalization
+    word clouds
+    NER
+    BERTopic
+    synthesis tables
 
-Only the primary and selected diagnostic outputs are used as direct evidence in the thesis.
-Supplementary outputs are included for transparency, triangulation, and future research.
+The corrected article layer should be used for future article-specific statistical reporting. The original thesis layer remains preserved for faithful reproduction of the submitted thesis.
 
-
-============================================================
+======================================================================
 16. CITATION
-============================================================
+======================================================================
 
 If using or referring to this code package, cite:
 
-    Vrána, P. (2026). diploma-thesis [Source code].
-    GitHub. https://github.com/v0987654321/diploma-thesis
+    Vrána, P. (2026). Media Discourses of the Wagner Group in Malian Online Press:
+    Replication materials [Data set and code repository]. GitHub.
+    https://github.com/v0987654321/diploma-thesis
 
 Associated thesis:
 
-    Vrána, P. Media Discourses of the Wagner Group in Malian Online Press.
+    Vrána, P. (2026). Media Discourses of the Wagner Group in Malian Online Press
+    [Master’s thesis, Mendel University in Brno]. Theses.cz.
+    https://theses.cz/id/ieu87x/
 
-
-============================================================
+======================================================================
 17. FINAL NOTE
-============================================================
+======================================================================
 
-This repository is best understood as an open empirical and methodological workspace rather
-than only as a collection of final results. It contains the scripts and outputs necessary to
-inspect how the corpus was processed, how the variables were coded, how the pilot validation
-was performed, how the LLM adjudication layer was constrained and checked, and how the final
-analytical tables and figures were produced.
+This repository is an open empirical and methodological workspace rather than only a collection of final results. It contains the scripts and outputs necessary to inspect corpus construction, preprocessing, coding, pilot validation, model-assisted adjudication, source/republication enrichment, qualitative selection, and chapter-oriented analysis.
 
-The central methodological decision of the workflow is the use of the Gemini conservative
-adjudicated layer as the principal analytical output for the full corpus, supported by rule-based
-pipeline diagnostics, source/republication enrichment, and qualitative close reading.
+The original thesis workflow is retained unchanged. The corrected article workflow was introduced to repair a downstream provenance issue in which conservative Gemini adjudication was not merged into the original CORPUS-to-ANA analytical layer. The article workflow therefore provides a separate, documented, and reproducible basis for future journal-article analysis.
 
-This file was created in cooperation with Chat GPT 5.5. 
+Researchers are encouraged to inspect, reuse, verify, correct, extend, or reanalyse the available materials, subject to appropriate citation and to legal and ethical restrictions concerning copyrighted news texts.
+
+This README was prepared with generative AI assistance and reviewed by the author.
