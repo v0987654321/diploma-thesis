@@ -1,0 +1,7 @@
+flowchart TD
+    A[Pipeline consolidated corpus] --> B[Gemini payload batch]
+    B --> C[Gemini parsed outputs]
+    C --> D[LLM authoritative table]
+    C --> E[Conservative adjudicated table]
+    C --> F[Manual verification table]
+    C --> G[High-confidence subset]

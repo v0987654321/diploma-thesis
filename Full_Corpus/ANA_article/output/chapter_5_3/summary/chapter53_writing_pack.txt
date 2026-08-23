@@ -1,0 +1,40 @@
+CHAPTER 5.3 WRITING PACK
+Generated: 2026-08-17T14:51:22
+
+Corpus basis:
+- Retrieved corpus: 2474
+- Relevance 2+ corpus: 1976
+- Relevance 3+ corpus: 1029
+- Relevance 4 corpus: 751
+
+Actor structure within relevance 2+:
+- Wagner-only: 1827
+- Africa Corps / both: 146
+- Other / indirect / unclear: 3
+
+Source and republication:
+- Source-attributed: 978 (49.5%)
+- Likely republished: 1125 (56.9%)
+
+Overall frame prevalence:
+- Counterterrorism: 723 (36.6%)
+- Geopolitical_Rivalry: 666 (33.7%)
+- Human_Rights_Abuse: 460 (23.3%)
+- Sovereignty: 352 (17.8%)
+- Economic_Interests: 344 (17.4%)
+- Western_Failure: 305 (15.4%)
+- Security_Effectiveness: 234 (11.8%)
+- Anti_or_Neocolonialism: 192 (9.7%)
+
+Key output groups:
+- 5.3.1 actor representation tables and figures
+- 5.3.2 stance and legitimation tables and figures
+- 5.3.3 frame and discourse tables and figures
+- 5.3.4 associated actor tables and figures
+- 5.3.5 source, republication and outlet-level tables and figures
+
+Analytical cautions:
+- Statistical outputs describe within-corpus associations.
+- Outlet comparisons are restricted to outlets with at least 50 relevance 2+ articles.
+- Small categories should be interpreted cautiously.
+- Extreme regression odds ratios should be treated as unstable.

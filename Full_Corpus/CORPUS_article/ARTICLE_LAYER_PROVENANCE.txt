@@ -1,0 +1,19 @@
+ARTICLE DATA LAYER PROVENANCE
+
+Created: 2026-08-17T14:37:00
+
+Input coding layer:
+C:\Users\Petr\Downloads\github_download\diploma-thesis\Full_Corpus\pilot\GEMINI\data\final_conservative_adjudicated_table.csv
+
+Primary article coding rule:
+- Use Adj_V* values from the conservative Gemini adjudicated table.
+- Where Adj_V* is missing, use the original pipeline code.
+- Preserve original pipeline values as Pipeline_* columns.
+
+Reason:
+The original review_master.csv contained pipeline coding fields but did not
+contain Adj_V* or Final_* variables. As a result, ANA/analysis_master_clean.csv
+used pipeline fallback values despite the methodological intention to use
+the conservative Gemini adjudicated layer.
+
+This article-specific workflow corrects that downstream provenance issue.

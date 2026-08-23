@@ -1,0 +1,30 @@
+CHAPTER 5.2 OVERVIEW PACK
+Generated: 2026-08-17T14:51:16
+
+Core corpus composition:
+- Retrieved corpus: 2474
+- Relevance 1: 498
+- Relevance 2: 947
+- Relevance 3: 278
+- Relevance 4: 751
+- Relevance 2+: 1976
+- Relevance 3+: 1029
+
+Actor overview:
+- Wagner-only cases: 1827
+- Africa Corps or both: 146
+
+Outlet overview:
+- Number of outlets: 11
+- Largest outlet: maliweb.net (1070 articles)
+
+Source / republication overview:
+- Source-attributed cases: 1141
+- Likely republished cases: 1287
+- Near-duplicate cases: 785
+
+Recommended tables:
+- chapter52_corpus_basics.csv
+- chapter52_outlet_overview.csv
+- chapter52_relevance_overview.csv
+- chapter52_source_republication_overview.csv

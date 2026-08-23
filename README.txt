@@ -1053,4 +1053,8 @@ The original thesis workflow is retained unchanged. The corrected article workfl
 
 Researchers are encouraged to inspect, reuse, verify, correct, extend, or reanalyse the available materials, subject to appropriate citation and to legal and ethical restrictions concerning copyrighted news texts.
 
+<<<<<<< Updated upstream
 This README was prepared with generative AI assistance and reviewed by the author.
+=======
+This README was prepared with generative AI assistance and reviewed by the author.
+>>>>>>> Stashed changes
